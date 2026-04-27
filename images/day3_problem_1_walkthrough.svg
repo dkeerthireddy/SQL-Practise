@@ -1,0 +1,85 @@
+<svg viewBox="0 0 680 490" xmlns="http://www.w3.org/2000/svg">
+  <rect width="680" height="490" fill="#FFFFFF"/>
+  <defs>
+    <marker id="p1a0" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#2C2C2A"/></marker>
+    <marker id="p1ag" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#3B6D11"/></marker>
+    <marker id="p1ab" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#3B8BD4"/></marker>
+    <marker id="p1ao" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#EF9F27"/></marker>
+  </defs>
+  <text x="340" y="20" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="500" fill="#2C2C2A">#92 Reverse Linked List II — [1→2→3→4→5], left=2, right=4</text>
+  <!-- Frame 1 -->
+  <rect x="10" y="30" width="660" height="82" rx="6" fill="#F8F8F7" stroke="#888780" stroke-width="0.5"/>
+  <circle cx="28" cy="47" r="10" fill="#2C2C2A"/><text x="28" y="51" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#FFFFFF">1</text>
+  <text x="48" y="51" font-family="sans-serif" font-size="11" font-weight="500" fill="#2C2C2A">Navigate: prev_before stops at node 1 (left−1 = 1 step)</text>
+  <rect x="200" y="57" width="190" height="30" rx="4" fill="#EBF4FF" stroke="#3B8BD4" stroke-width="0.8"/>
+  <rect x="48" y="59" width="44" height="26" rx="6" fill="#F5F5F5" stroke="#888780" stroke-width="0.5"/><text x="70" y="77" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#888780">0</text>
+  <rect x="123" y="59" width="44" height="26" rx="6" fill="#FFFFFF" stroke="#2C2C2A" stroke-width="0.5"/><text x="145" y="77" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#2C2C2A">1</text>
+  <rect x="198" y="59" width="44" height="26" rx="6" fill="#3B8BD4" stroke="#3B8BD4" stroke-width="0.5"/><text x="220" y="77" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#FFFFFF">2</text>
+  <rect x="273" y="59" width="44" height="26" rx="6" fill="#3B8BD4" stroke="#3B8BD4" stroke-width="0.5"/><text x="295" y="77" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#FFFFFF">3</text>
+  <rect x="348" y="59" width="44" height="26" rx="6" fill="#3B8BD4" stroke="#3B8BD4" stroke-width="0.5"/><text x="370" y="77" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#FFFFFF">4</text>
+  <rect x="423" y="59" width="44" height="26" rx="6" fill="#FFFFFF" stroke="#2C2C2A" stroke-width="0.5"/><text x="445" y="77" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#2C2C2A">5</text>
+  <line x1="92" y1="72" x2="119" y2="72" stroke="#2C2C2A" stroke-width="1.5" marker-end="url(#p1a0)"/>
+  <line x1="167" y1="72" x2="194" y2="72" stroke="#2C2C2A" stroke-width="1.5" marker-end="url(#p1a0)"/>
+  <line x1="242" y1="72" x2="269" y2="72" stroke="#3B8BD4" stroke-width="1.5" marker-end="url(#p1ab)"/>
+  <line x1="317" y1="72" x2="344" y2="72" stroke="#3B8BD4" stroke-width="1.5" marker-end="url(#p1ab)"/>
+  <line x1="392" y1="72" x2="419" y2="72" stroke="#2C2C2A" stroke-width="1.5" marker-end="url(#p1a0)"/>
+  <text x="145" y="100" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#EF9F27">prev_before</text>
+  <text x="220" y="100" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#3B8BD4">curr=2</text>
+  <text x="530" y="77" font-family="sans-serif" font-size="11" fill="#888780">prev=None</text>
+  <!-- Frame 2 -->
+  <rect x="10" y="122" width="660" height="90" rx="6" fill="#F8F8F7" stroke="#888780" stroke-width="0.5"/>
+  <circle cx="28" cy="139" r="10" fill="#2C2C2A"/><text x="28" y="143" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#FFFFFF">2</text>
+  <text x="48" y="143" font-family="sans-serif" font-size="11" font-weight="500" fill="#2C2C2A">Reverse loop (3 iters complete): 4→3→2→None detached, curr=5</text>
+  <rect x="48" y="152" width="44" height="26" rx="6" fill="#F5F5F5" stroke="#888780" stroke-width="0.5"/><text x="70" y="170" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#888780">0</text>
+  <rect x="123" y="152" width="44" height="26" rx="6" fill="#FFFFFF" stroke="#2C2C2A" stroke-width="0.5"/><text x="145" y="170" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#2C2C2A">1</text>
+  <line x1="167" y1="165" x2="190" y2="165" stroke="#E24B4A" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="182" y="158" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#E24B4A">✗</text>
+  <rect x="198" y="152" width="44" height="26" rx="6" fill="#EF9F27" stroke="#EF9F27" stroke-width="0.5"/><text x="220" y="170" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#FFFFFF">4</text>
+  <rect x="273" y="152" width="44" height="26" rx="6" fill="#3B8BD4" stroke="#3B8BD4" stroke-width="0.5"/><text x="295" y="170" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#FFFFFF">3</text>
+  <rect x="348" y="152" width="44" height="26" rx="6" fill="#3B8BD4" stroke="#3B8BD4" stroke-width="0.5"/><text x="370" y="170" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#FFFFFF">2</text>
+  <line x1="242" y1="165" x2="269" y2="165" stroke="#EF9F27" stroke-width="1.5" marker-end="url(#p1ao)"/>
+  <line x1="317" y1="165" x2="344" y2="165" stroke="#3B8BD4" stroke-width="1.5" marker-end="url(#p1ab)"/>
+  <text x="398" y="167" font-family="sans-serif" font-size="12" fill="#888780">→ None</text>
+  <rect x="443" y="152" width="44" height="26" rx="6" fill="#FFFFFF" stroke="#2C2C2A" stroke-width="0.5"/><text x="465" y="170" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#2C2C2A">5</text>
+  <text x="220" y="196" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#EF9F27">prev=4</text>
+  <text x="465" y="196" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#3B8BD4">curr=5</text>
+  <text x="145" y="196" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#EF9F27">prev_before</text>
+  <!-- Frame 3 -->
+  <rect x="10" y="222" width="660" height="88" rx="6" fill="#F8F8F7" stroke="#888780" stroke-width="0.5"/>
+  <circle cx="28" cy="239" r="10" fill="#2C2C2A"/><text x="28" y="243" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#FFFFFF">3</text>
+  <text x="48" y="242" font-family="sans-serif" font-size="11" font-weight="500" fill="#2C2C2A">Reconnect ①: prev_before.next.next = curr  →  node(2).next = 5  (tail wired first)</text>
+  <rect x="48" y="252" width="44" height="26" rx="6" fill="#F5F5F5" stroke="#888780" stroke-width="0.5"/><text x="70" y="270" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#888780">0</text>
+  <rect x="123" y="252" width="44" height="26" rx="6" fill="#FFFFFF" stroke="#2C2C2A" stroke-width="0.5"/><text x="145" y="270" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#2C2C2A">1</text>
+  <line x1="167" y1="265" x2="190" y2="265" stroke="#E24B4A" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <rect x="198" y="252" width="44" height="26" rx="6" fill="#EF9F27" stroke="#EF9F27" stroke-width="0.5"/><text x="220" y="270" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#FFFFFF">4</text>
+  <rect x="273" y="252" width="44" height="26" rx="6" fill="#3B8BD4" stroke="#3B8BD4" stroke-width="0.5"/><text x="295" y="270" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#FFFFFF">3</text>
+  <rect x="348" y="252" width="44" height="26" rx="6" fill="#3B8BD4" stroke="#3B8BD4" stroke-width="0.5"/><text x="370" y="270" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#FFFFFF">2</text>
+  <rect x="423" y="252" width="44" height="26" rx="6" fill="#FFFFFF" stroke="#2C2C2A" stroke-width="0.5"/><text x="445" y="270" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#2C2C2A">5</text>
+  <line x1="242" y1="265" x2="269" y2="265" stroke="#EF9F27" stroke-width="1.5" marker-end="url(#p1ao)"/>
+  <line x1="317" y1="265" x2="344" y2="265" stroke="#3B8BD4" stroke-width="1.5" marker-end="url(#p1ab)"/>
+  <line x1="392" y1="265" x2="419" y2="265" stroke="#3B6D11" stroke-width="2" marker-end="url(#p1ag)"/>
+  <text x="406" y="257" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#3B6D11">①</text>
+  <text x="145" y="292" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#EF9F27">prev_before</text>
+  <!-- Frame 4 -->
+  <rect x="10" y="320" width="660" height="88" rx="6" fill="#EDF7EE" stroke="#3B6D11" stroke-width="1"/>
+  <circle cx="28" cy="337" r="10" fill="#3B6D11"/><text x="28" y="341" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#FFFFFF">4</text>
+  <text x="48" y="340" font-family="sans-serif" font-size="11" font-weight="500" fill="#3B6D11">Reconnect ②: prev_before.next = prev  →  node(1).next = 4  ✓  Complete</text>
+  <rect x="48" y="350" width="44" height="26" rx="6" fill="#F5F5F5" stroke="#888780" stroke-width="0.5"/><text x="70" y="368" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#888780">0</text>
+  <rect x="123" y="350" width="44" height="26" rx="6" fill="#FFFFFF" stroke="#2C2C2A" stroke-width="0.5"/><text x="145" y="368" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#2C2C2A">1</text>
+  <rect x="198" y="350" width="44" height="26" rx="6" fill="#3B6D11" stroke="#3B6D11" stroke-width="0.5"/><text x="220" y="368" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#FFFFFF">4</text>
+  <rect x="273" y="350" width="44" height="26" rx="6" fill="#3B6D11" stroke="#3B6D11" stroke-width="0.5"/><text x="295" y="368" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#FFFFFF">3</text>
+  <rect x="348" y="350" width="44" height="26" rx="6" fill="#3B6D11" stroke="#3B6D11" stroke-width="0.5"/><text x="370" y="368" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#FFFFFF">2</text>
+  <rect x="423" y="350" width="44" height="26" rx="6" fill="#FFFFFF" stroke="#2C2C2A" stroke-width="0.5"/><text x="445" y="368" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#2C2C2A">5</text>
+  <line x1="92" y1="363" x2="119" y2="363" stroke="#2C2C2A" stroke-width="1.5" marker-end="url(#p1a0)"/>
+  <line x1="167" y1="363" x2="194" y2="363" stroke="#3B6D11" stroke-width="2" marker-end="url(#p1ag)"/>
+  <text x="181" y="355" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#3B6D11">②</text>
+  <line x1="242" y1="363" x2="269" y2="363" stroke="#3B6D11" stroke-width="1.5" marker-end="url(#p1ag)"/>
+  <line x1="317" y1="363" x2="344" y2="363" stroke="#3B6D11" stroke-width="1.5" marker-end="url(#p1ag)"/>
+  <line x1="392" y1="363" x2="419" y2="363" stroke="#3B6D11" stroke-width="1.5" marker-end="url(#p1ag)"/>
+  <text x="340" y="398" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="500" fill="#3B6D11">1 → 4 → 3 → 2 → 5   ✓</text>
+  <!-- Legend -->
+  <rect x="10" y="416" width="660" height="64" rx="6" fill="#F8F8F7" stroke="#888780" stroke-width="0.5"/>
+  <text x="340" y="433" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="500" fill="#2C2C2A">After reversal loop: prev=node(4) [new head] · curr=node(5) [continuation] · prev_before.next=node(2) [new tail — use before overwriting]</text>
+  <text x="34" y="458" font-family="sans-serif" font-size="11" fill="#E24B4A">⚠ prev_before.next.next = curr  MUST come before  prev_before.next = prev</text>
+  <text x="34" y="472" font-family="sans-serif" font-size="11" fill="#888780">   Once you set prev_before.next = prev, the reference to node(2) is gone forever</text>
+</svg>

@@ -1,0 +1,48 @@
+<svg viewBox="0 0 680 385" xmlns="http://www.w3.org/2000/svg">
+  <rect width="680" height="385" fill="#FFFFFF"/>
+  <defs>
+    <marker id="a0" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#2C2C2A"/></marker>
+    <marker id="ag" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#3B6D11"/></marker>
+    <marker id="ab" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#3B8BD4"/></marker>
+    <marker id="agr" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#888780"/></marker>
+  </defs>
+  <text x="340" y="22" text-anchor="middle" font-family="sans-serif" font-size="15" font-weight="500" fill="#2C2C2A">Bounded Reversal: The Two-Boundary Invariant</text>
+  <text x="18" y="56" font-family="sans-serif" font-size="11" font-weight="500" fill="#888780">BEFORE</text>
+  <rect x="210" y="62" width="199" height="36" rx="5" fill="#EBF4FF" stroke="#3B8BD4" stroke-width="1"/>
+  <text x="309" y="57" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#3B8BD4">segment to reverse</text>
+  <rect x="53" y="65" width="44" height="28" rx="6" fill="#F5F5F5" stroke="#888780" stroke-width="0.5"/><text x="75" y="84" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#888780">0</text><text x="75" y="107" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#888780">dummy</text>
+  <rect x="128" y="65" width="44" height="28" rx="6" fill="#FFFFFF" stroke="#2C2C2A" stroke-width="0.5"/><text x="150" y="84" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="500" fill="#2C2C2A">A</text><text x="150" y="107" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#888780">anchor</text>
+  <rect x="208" y="65" width="44" height="28" rx="6" fill="#3B8BD4" stroke="#3B8BD4" stroke-width="0.5"/><text x="230" y="84" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="500" fill="#FFFFFF">H</text><text x="230" y="107" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#3B8BD4">seg head</text>
+  <rect x="287" y="65" width="44" height="28" rx="6" fill="#3B8BD4" stroke="#3B8BD4" stroke-width="0.5"/><text x="309" y="84" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#FFFFFF">···</text>
+  <rect x="366" y="65" width="44" height="28" rx="6" fill="#3B8BD4" stroke="#3B8BD4" stroke-width="0.5"/><text x="388" y="84" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="500" fill="#FFFFFF">T</text><text x="388" y="107" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#3B8BD4">seg tail</text>
+  <rect x="445" y="65" width="44" height="28" rx="6" fill="#FFFFFF" stroke="#2C2C2A" stroke-width="0.5"/><text x="467" y="84" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="500" fill="#2C2C2A">B</text><text x="467" y="107" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#888780">after</text>
+  <line x1="97" y1="79" x2="124" y2="79" stroke="#2C2C2A" stroke-width="1.5" marker-end="url(#a0)"/>
+  <line x1="172" y1="79" x2="204" y2="79" stroke="#2C2C2A" stroke-width="1.5" marker-end="url(#a0)"/>
+  <line x1="252" y1="79" x2="283" y2="79" stroke="#3B8BD4" stroke-width="1.5" marker-end="url(#ab)"/>
+  <line x1="331" y1="79" x2="362" y2="79" stroke="#3B8BD4" stroke-width="1.5" marker-end="url(#ab)"/>
+  <line x1="410" y1="79" x2="441" y2="79" stroke="#2C2C2A" stroke-width="1.5" marker-end="url(#a0)"/>
+  <line x1="309" y1="120" x2="309" y2="162" stroke="#888780" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#agr)"/>
+  <text x="324" y="148" font-family="sans-serif" font-size="11" fill="#888780">reverse segment</text>
+  <text x="18" y="192" font-family="sans-serif" font-size="11" font-weight="500" fill="#888780">AFTER</text>
+  <rect x="53" y="196" width="44" height="28" rx="6" fill="#F5F5F5" stroke="#888780" stroke-width="0.5"/><text x="75" y="215" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#888780">0</text>
+  <rect x="128" y="196" width="44" height="28" rx="6" fill="#FFFFFF" stroke="#2C2C2A" stroke-width="0.5"/><text x="150" y="215" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="500" fill="#2C2C2A">A</text>
+  <rect x="208" y="196" width="44" height="28" rx="6" fill="#3B6D11" stroke="#3B6D11" stroke-width="0.5"/><text x="230" y="215" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="500" fill="#FFFFFF">T</text><text x="230" y="238" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#3B6D11">new head</text>
+  <rect x="287" y="196" width="44" height="28" rx="6" fill="#3B8BD4" stroke="#3B8BD4" stroke-width="0.5"/><text x="309" y="215" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#FFFFFF">···</text>
+  <rect x="366" y="196" width="44" height="28" rx="6" fill="#3B6D11" stroke="#3B6D11" stroke-width="0.5"/><text x="388" y="215" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="500" fill="#FFFFFF">H</text><text x="388" y="238" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#3B6D11">new tail</text>
+  <rect x="445" y="196" width="44" height="28" rx="6" fill="#FFFFFF" stroke="#2C2C2A" stroke-width="0.5"/><text x="467" y="215" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="500" fill="#2C2C2A">B</text>
+  <line x1="97" y1="210" x2="124" y2="210" stroke="#2C2C2A" stroke-width="1.5" marker-end="url(#a0)"/>
+  <line x1="172" y1="210" x2="204" y2="210" stroke="#3B6D11" stroke-width="2" marker-end="url(#ag)"/>
+  <text x="188" y="202" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="500" fill="#3B6D11">①</text>
+  <line x1="252" y1="210" x2="283" y2="210" stroke="#3B8BD4" stroke-width="1.5" marker-end="url(#ab)"/>
+  <line x1="331" y1="210" x2="362" y2="210" stroke="#3B8BD4" stroke-width="1.5" marker-end="url(#ab)"/>
+  <line x1="410" y1="210" x2="441" y2="210" stroke="#3B6D11" stroke-width="2" marker-end="url(#ag)"/>
+  <text x="426" y="202" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="500" fill="#3B6D11">②</text>
+  <rect x="18" y="255" width="644" height="118" rx="8" fill="#F8F8F7" stroke="#888780" stroke-width="0.5"/>
+  <text x="340" y="275" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="500" fill="#2C2C2A">Two Reconnections — Order Is Not Optional</text>
+  <text x="34" y="298" font-family="sans-serif" font-size="12" fill="#3B6D11">①  A.next = T</text>
+  <text x="145" y="298" font-family="sans-serif" font-size="12" fill="#2C2C2A">→  anchor wired to reversed segment's new head (was tail)</text>
+  <text x="34" y="320" font-family="sans-serif" font-size="12" fill="#3B6D11">②  H.next = B</text>
+  <text x="145" y="320" font-family="sans-serif" font-size="12" fill="#2C2C2A">→  old segment head (now tail) wired to continuation</text>
+  <text x="34" y="344" font-family="sans-serif" font-size="11" fill="#E24B4A">⚠  Wire ② before ① — prev_before.next is your only handle on H; overwrite it and H is lost</text>
+  <text x="34" y="362" font-family="sans-serif" font-size="11" fill="#888780">   In code:  prev_before.next.next = curr   →   then   prev_before.next = prev</text>
+</svg>
