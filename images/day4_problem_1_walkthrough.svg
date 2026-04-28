@@ -1,0 +1,97 @@
+<svg viewBox="0 0 680 480" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+  <rect width="680" height="480" fill="#FFFFFF"/>
+  <defs>
+    <marker id="a1" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#2C2C2A"/>
+    </marker>
+  </defs>
+  <text x="340" y="22" text-anchor="middle" font-size="14" font-weight="500" fill="#2C2C2A">Problem 1: Merge Two Sorted Lists (#21) — Walkthrough</text>
+  <text x="340" y="38" text-anchor="middle" font-size="12" fill="#888780">l1=1→3→5  l2=2→4→6  →  1→2→3→4→5→6</text>
+
+  <!-- STEP 0: Initial -->
+  <g transform="translate(20,52)">
+    <circle cx="12" cy="12" r="11" fill="#3B8BD4"/><text x="12" y="17" text-anchor="middle" font-size="11" fill="#FFF">0</text>
+    <text x="30" y="17" font-size="12" fill="#2C2C2A">Initial state</text>
+
+    <text x="30" y="42" font-size="11" fill="#3B8BD4">l1→</text>
+    <rect x="60" y="30" width="32" height="24" rx="5" fill="#3B8BD4" stroke="#2C2C2A" stroke-width="0.5"/><text x="76" y="47" text-anchor="middle" font-size="12" fill="#FFF">1</text>
+    <line x1="92" y1="42" x2="100" y2="42" stroke="#2C2C2A" stroke-width="1.2" marker-end="url(#a1)"/>
+    <rect x="100" y="30" width="32" height="24" rx="5" fill="#888780" stroke="#2C2C2A" stroke-width="0.5"/><text x="116" y="47" text-anchor="middle" font-size="12" fill="#FFF">3</text>
+    <line x1="132" y1="42" x2="140" y2="42" stroke="#2C2C2A" stroke-width="1.2" marker-end="url(#a1)"/>
+    <rect x="140" y="30" width="32" height="24" rx="5" fill="#888780" stroke="#2C2C2A" stroke-width="0.5"/><text x="156" y="47" text-anchor="middle" font-size="12" fill="#FFF">5</text>
+    <text x="174" y="47" font-size="11" fill="#888780">∅</text>
+
+    <text x="30" y="70" font-size="11" fill="#EF9F27">l2→</text>
+    <rect x="60" y="58" width="32" height="24" rx="5" fill="#EF9F27" stroke="#2C2C2A" stroke-width="0.5"/><text x="76" y="75" text-anchor="middle" font-size="12" fill="#FFF">2</text>
+    <line x1="92" y1="70" x2="100" y2="70" stroke="#2C2C2A" stroke-width="1.2" marker-end="url(#a1)"/>
+    <rect x="100" y="58" width="32" height="24" rx="5" fill="#888780" stroke="#2C2C2A" stroke-width="0.5"/><text x="116" y="75" text-anchor="middle" font-size="12" fill="#FFF">4</text>
+    <line x1="132" y1="70" x2="140" y2="70" stroke="#2C2C2A" stroke-width="1.2" marker-end="url(#a1)"/>
+    <rect x="140" y="58" width="32" height="24" rx="5" fill="#888780" stroke="#2C2C2A" stroke-width="0.5"/><text x="156" y="75" text-anchor="middle" font-size="12" fill="#FFF">6</text>
+    <text x="174" y="75" font-size="11" fill="#888780">∅</text>
+
+    <text x="230" y="42" font-size="11" fill="#2C2C2A">dummy=curr→</text>
+    <rect x="320" y="30" width="50" height="24" rx="5" fill="#E24B4A" stroke="#2C2C2A" stroke-width="0.5"/><text x="345" y="47" text-anchor="middle" font-size="12" fill="#FFF">dummy</text>
+    <text x="372" y="47" font-size="11" fill="#888780">(scaffold)</text>
+
+    <text x="230" y="75" font-size="11" fill="#3B6D11">output: </text><text x="280" y="75" font-size="11" fill="#888780">(empty)</text>
+  </g>
+
+  <!-- STEP 1 -->
+  <g transform="translate(20,155)">
+    <circle cx="12" cy="12" r="11" fill="#3B8BD4"/><text x="12" y="17" text-anchor="middle" font-size="11" fill="#FFF">1</text>
+    <text x="30" y="17" font-size="12" fill="#2C2C2A">l1.val(1) ≤ l2.val(2) → take l1</text>
+    <text x="30" y="35" font-size="11" fill="#2C2C2A">curr.next=node(1);  l1=3→5;  curr=node(1)</text>
+    <text x="30" y="55" font-size="11" fill="#3B6D11">output: dummy→</text>
+    <rect x="128" y="43" width="28" height="22" rx="5" fill="#3B6D11" stroke="#2C2C2A" stroke-width="0.5"/><text x="142" y="59" text-anchor="middle" font-size="12" fill="#FFF">1</text>
+    <text x="158" y="59" font-size="11" fill="#888780">← curr</text>
+  </g>
+
+  <!-- STEP 2 -->
+  <g transform="translate(20,220)">
+    <circle cx="12" cy="12" r="11" fill="#3B8BD4"/><text x="12" y="17" text-anchor="middle" font-size="11" fill="#FFF">2</text>
+    <text x="30" y="17" font-size="12" fill="#2C2C2A">l1.val(3) > l2.val(2) → take l2</text>
+    <text x="30" y="35" font-size="11" fill="#2C2C2A">curr.next=node(2);  l2=4→6;  curr=node(2)</text>
+    <text x="30" y="55" font-size="11" fill="#3B6D11">output: dummy→</text>
+    <rect x="128" y="43" width="28" height="22" rx="5" fill="#3B6D11" stroke="#2C2C2A" stroke-width="0.5"/><text x="142" y="59" text-anchor="middle" font-size="12" fill="#FFF">1</text>
+    <line x1="156" y1="54" x2="164" y2="54" stroke="#2C2C2A" stroke-width="1" marker-end="url(#a1)"/>
+    <rect x="164" y="43" width="28" height="22" rx="5" fill="#3B6D11" stroke="#2C2C2A" stroke-width="0.5"/><text x="178" y="59" text-anchor="middle" font-size="12" fill="#FFF">2</text>
+    <text x="194" y="59" font-size="11" fill="#888780">← curr</text>
+  </g>
+
+  <!-- STEP 3 -->
+  <g transform="translate(20,285)">
+    <circle cx="12" cy="12" r="11" fill="#3B8BD4"/><text x="12" y="17" text-anchor="middle" font-size="11" fill="#FFF">3</text>
+    <text x="30" y="17" font-size="12" fill="#2C2C2A">l1.val(3) ≤ l2.val(4) → take l1</text>
+    <text x="30" y="35" font-size="11" fill="#2C2C2A">curr.next=node(3);  l1=5;  curr=node(3)</text>
+    <text x="30" y="55" font-size="11" fill="#3B6D11">output: dummy→1→2→</text>
+    <rect x="164" y="43" width="28" height="22" rx="5" fill="#3B6D11" stroke="#2C2C2A" stroke-width="0.5"/><text x="178" y="59" text-anchor="middle" font-size="12" fill="#FFF">3</text>
+    <text x="194" y="59" font-size="11" fill="#888780">← curr</text>
+  </g>
+
+  <!-- STEP 4 -->
+  <g transform="translate(20,350)">
+    <circle cx="12" cy="12" r="11" fill="#3B8BD4"/><text x="12" y="17" text-anchor="middle" font-size="11" fill="#FFF">4</text>
+    <text x="30" y="17" font-size="12" fill="#2C2C2A">l1.val(5) > l2.val(4) → take l2;  then l1.val(5) ≤ l2.val(6) → take l1</text>
+    <text x="30" y="35" font-size="11" fill="#2C2C2A">output: dummy→1→2→3→4→5   l1=∅, l2=6→∅</text>
+  </g>
+
+  <!-- STEP 5 -->
+  <g transform="translate(20,405)">
+    <circle cx="12" cy="12" r="11" fill="#3B6D11"/><text x="12" y="17" text-anchor="middle" font-size="11" fill="#FFF">5</text>
+    <text x="30" y="17" font-size="12" fill="#2C2C2A">l1 exhausted → loop exits.  curr.next = l2  →  attach 6  (O(1))</text>
+    <text x="30" y="38" font-size="11" fill="#3B6D11">Final: </text>
+    <rect x="72" y="26" width="28" height="22" rx="5" fill="#3B6D11" stroke="#2C2C2A" stroke-width="0.5"/><text x="86" y="42" text-anchor="middle" font-size="12" fill="#FFF">1</text>
+    <line x1="100" y1="37" x2="108" y2="37" stroke="#2C2C2A" stroke-width="1" marker-end="url(#a1)"/>
+    <rect x="108" y="26" width="28" height="22" rx="5" fill="#3B6D11" stroke="#2C2C2A" stroke-width="0.5"/><text x="122" y="42" text-anchor="middle" font-size="12" fill="#FFF">2</text>
+    <line x1="136" y1="37" x2="144" y2="37" stroke="#2C2C2A" stroke-width="1" marker-end="url(#a1)"/>
+    <rect x="144" y="26" width="28" height="22" rx="5" fill="#3B6D11" stroke="#2C2C2A" stroke-width="0.5"/><text x="158" y="42" text-anchor="middle" font-size="12" fill="#FFF">3</text>
+    <line x1="172" y1="37" x2="180" y2="37" stroke="#2C2C2A" stroke-width="1" marker-end="url(#a1)"/>
+    <rect x="180" y="26" width="28" height="22" rx="5" fill="#3B6D11" stroke="#2C2C2A" stroke-width="0.5"/><text x="194" y="42" text-anchor="middle" font-size="12" fill="#FFF">4</text>
+    <line x1="208" y1="37" x2="216" y2="37" stroke="#2C2C2A" stroke-width="1" marker-end="url(#a1)"/>
+    <rect x="216" y="26" width="28" height="22" rx="5" fill="#3B6D11" stroke="#2C2C2A" stroke-width="0.5"/><text x="230" y="42" text-anchor="middle" font-size="12" fill="#FFF">5</text>
+    <line x1="244" y1="37" x2="252" y2="37" stroke="#2C2C2A" stroke-width="1" marker-end="url(#a1)"/>
+    <rect x="252" y="26" width="28" height="22" rx="5" fill="#3B6D11" stroke="#2C2C2A" stroke-width="0.5"/><text x="266" y="42" text-anchor="middle" font-size="12" fill="#FFF">6</text>
+    <text x="284" y="42" font-size="12" fill="#3B6D11">✓</text>
+    <text x="30" y="60" font-size="11" fill="#888780">return dummy.next  (dummy stays behind — not part of result)</text>
+  </g>
+</svg>

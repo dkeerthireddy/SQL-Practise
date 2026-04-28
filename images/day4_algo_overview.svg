@@ -1,0 +1,151 @@
+<svg viewBox="0 0 680 420" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+  <rect width="680" height="420" fill="#FFFFFF"/>
+
+  <!-- Title -->
+  <text x="340" y="28" text-anchor="middle" font-size="15" font-weight="500" fill="#2C2C2A">Day 4 — Linked List: Merge &amp; Sort — Algorithm Overview</text>
+
+  <!-- Phase 1: Two-pointer merge -->
+  <rect x="20" y="50" width="300" height="160" rx="8" fill="#F0F7FF" stroke="#3B8BD4" stroke-width="1"/>
+  <text x="170" y="72" text-anchor="middle" font-size="13" font-weight="500" fill="#3B8BD4">Phase 1: Two-pointer Merge</text>
+
+  <!-- l1 nodes -->
+  <rect x="35" y="88" width="36" height="28" rx="6" fill="#3B8BD4" stroke="#2C2C2A" stroke-width="0.5"/>
+  <text x="53" y="107" text-anchor="middle" font-size="13" fill="#FFFFFF">1</text>
+  <rect x="79" y="88" width="36" height="28" rx="6" fill="#888780" stroke="#2C2C2A" stroke-width="0.5"/>
+  <text x="97" y="107" text-anchor="middle" font-size="13" fill="#FFFFFF">3</text>
+  <rect x="123" y="88" width="36" height="28" rx="6" fill="#888780" stroke="#2C2C2A" stroke-width="0.5"/>
+  <text x="141" y="107" text-anchor="middle" font-size="13" fill="#FFFFFF">5</text>
+  <line x1="71" y1="102" x2="79" y2="102" stroke="#2C2C2A" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="115" y1="102" x2="123" y2="102" stroke="#2C2C2A" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="35" y="83" font-size="11" fill="#3B8BD4">l1</text>
+
+  <!-- l2 nodes -->
+  <rect x="35" y="128" width="36" height="28" rx="6" fill="#EF9F27" stroke="#2C2C2A" stroke-width="0.5"/>
+  <text x="53" y="147" text-anchor="middle" font-size="13" fill="#FFFFFF">2</text>
+  <rect x="79" y="128" width="36" height="28" rx="6" fill="#888780" stroke="#2C2C2A" stroke-width="0.5"/>
+  <text x="97" y="147" text-anchor="middle" font-size="13" fill="#FFFFFF">4</text>
+  <rect x="123" y="128" width="36" height="28" rx="6" fill="#888780" stroke="#2C2C2A" stroke-width="0.5"/>
+  <text x="141" y="147" text-anchor="middle" font-size="13" fill="#FFFFFF">6</text>
+  <line x1="71" y1="142" x2="79" y2="142" stroke="#2C2C2A" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="115" y1="142" x2="123" y2="142" stroke="#2C2C2A" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="35" y="123" font-size="11" fill="#EF9F27">l2</text>
+
+  <text x="170" y="118" text-anchor="middle" font-size="11" fill="#2C2C2A">pick smaller head each step</text>
+  <text x="170" y="132" text-anchor="middle" font-size="11" fill="#2C2C2A">attach tail when one empties</text>
+
+  <!-- Output row -->
+  <text x="35" y="178" font-size="11" fill="#3B6D11">out</text>
+  <rect x="35" y="182" width="36" height="24" rx="6" fill="#3B6D11" stroke="#2C2C2A" stroke-width="0.5"/>
+  <text x="53" y="199" text-anchor="middle" font-size="12" fill="#FFFFFF">1</text>
+  <rect x="79" y="182" width="36" height="24" rx="6" fill="#3B6D11" stroke="#2C2C2A" stroke-width="0.5"/>
+  <text x="97" y="199" text-anchor="middle" font-size="12" fill="#FFFFFF">2</text>
+  <rect x="123" y="182" width="36" height="24" rx="6" fill="#3B6D11" stroke="#2C2C2A" stroke-width="0.5"/>
+  <text x="141" y="199" text-anchor="middle" font-size="12" fill="#FFFFFF">3</text>
+  <rect x="167" y="182" width="36" height="24" rx="6" fill="#3B6D11" stroke="#2C2C2A" stroke-width="0.5"/>
+  <text x="185" y="199" text-anchor="middle" font-size="12" fill="#FFFFFF">4</text>
+  <rect x="211" y="182" width="36" height="24" rx="6" fill="#3B6D11" stroke="#2C2C2A" stroke-width="0.5"/>
+  <text x="229" y="199" text-anchor="middle" font-size="12" fill="#FFFFFF">5</text>
+  <rect x="255" y="182" width="36" height="24" rx="6" fill="#3B6D11" stroke="#2C2C2A" stroke-width="0.5"/>
+  <text x="273" y="199" text-anchor="middle" font-size="12" fill="#FFFFFF">6</text>
+  <line x1="71" y1="194" x2="79" y2="194" stroke="#2C2C2A" stroke-width="1" marker-end="url(#arr)"/>
+  <line x1="115" y1="194" x2="123" y2="194" stroke="#2C2C2A" stroke-width="1" marker-end="url(#arr)"/>
+  <line x1="159" y1="194" x2="167" y2="194" stroke="#2C2C2A" stroke-width="1" marker-end="url(#arr)"/>
+  <line x1="203" y1="194" x2="211" y2="194" stroke="#2C2C2A" stroke-width="1" marker-end="url(#arr)"/>
+  <line x1="247" y1="194" x2="255" y2="194" stroke="#2C2C2A" stroke-width="1" marker-end="url(#arr)"/>
+
+  <!-- Phase 2: Min-Heap -->
+  <rect x="340" y="50" width="320" height="160" rx="8" fill="#FFF8F0" stroke="#EF9F27" stroke-width="1"/>
+  <text x="500" y="72" text-anchor="middle" font-size="13" font-weight="500" fill="#EF9F27">Phase 2: Min-Heap (k lists)</text>
+
+  <rect x="465" y="85" width="70" height="26" rx="6" fill="#EF9F27" stroke="#2C2C2A" stroke-width="0.5"/>
+  <text x="500" y="103" text-anchor="middle" font-size="12" fill="#FFFFFF">min: (1,0)</text>
+
+  <rect x="420" y="122" width="70" height="26" rx="6" fill="#888780" stroke="#2C2C2A" stroke-width="0.5"/>
+  <text x="455" y="140" text-anchor="middle" font-size="12" fill="#FFFFFF">(1,1)</text>
+  <rect x="510" y="122" width="70" height="26" rx="6" fill="#888780" stroke="#2C2C2A" stroke-width="0.5"/>
+  <text x="545" y="140" text-anchor="middle" font-size="12" fill="#FFFFFF">(2,2)</text>
+
+  <line x1="480" y1="111" x2="455" y2="122" stroke="#2C2C2A" stroke-width="1"/>
+  <line x1="520" y1="111" x2="545" y2="122" stroke="#2C2C2A" stroke-width="1"/>
+
+  <text x="500" y="168" text-anchor="middle" font-size="11" fill="#2C2C2A">pop min → wire to output</text>
+  <text x="500" y="182" text-anchor="middle" font-size="11" fill="#2C2C2A">push node.next → O(log k)</text>
+  <text x="355" y="200" font-size="11" fill="#EF9F27">O(n log k)</text>
+
+  <!-- Phase 3: Sort List -->
+  <rect x="20" y="230" width="640" height="170" rx="8" fill="#F4FFF4" stroke="#3B6D11" stroke-width="1"/>
+  <text x="340" y="252" text-anchor="middle" font-size="13" font-weight="500" fill="#3B6D11">Phase 3: Sort List = Split (slow/fast) + Recurse + Merge</text>
+
+  <text x="50" y="275" font-size="11" fill="#2C2C2A">Level 0:</text>
+  <rect x="110" y="262" width="30" height="24" rx="5" fill="#888780" stroke="#2C2C2A" stroke-width="0.5"/>
+  <text x="125" y="279" text-anchor="middle" font-size="12" fill="#FFF">4</text>
+  <rect x="148" y="262" width="30" height="24" rx="5" fill="#888780" stroke="#2C2C2A" stroke-width="0.5"/>
+  <text x="163" y="279" text-anchor="middle" font-size="12" fill="#FFF">2</text>
+  <rect x="186" y="262" width="30" height="24" rx="5" fill="#888780" stroke="#2C2C2A" stroke-width="0.5"/>
+  <text x="201" y="279" text-anchor="middle" font-size="12" fill="#FFF">1</text>
+  <rect x="224" y="262" width="30" height="24" rx="5" fill="#888780" stroke="#2C2C2A" stroke-width="0.5"/>
+  <text x="239" y="279" text-anchor="middle" font-size="12" fill="#FFF">3</text>
+  <line x1="140" y1="274" x2="148" y2="274" stroke="#2C2C2A" stroke-width="1" marker-end="url(#arr)"/>
+  <line x1="178" y1="274" x2="186" y2="274" stroke="#2C2C2A" stroke-width="1" marker-end="url(#arr)"/>
+  <line x1="216" y1="274" x2="224" y2="274" stroke="#2C2C2A" stroke-width="1" marker-end="url(#arr)"/>
+
+  <line x1="265" y1="274" x2="310" y2="274" stroke="#E24B4A" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#redarr)"/>
+  <text x="288" y="268" text-anchor="middle" font-size="10" fill="#E24B4A">split</text>
+
+  <text x="50" y="312" font-size="11" fill="#2C2C2A">Level 1:</text>
+  <rect x="110" y="298" width="30" height="24" rx="5" fill="#3B8BD4" stroke="#2C2C2A" stroke-width="0.5"/>
+  <text x="125" y="315" text-anchor="middle" font-size="12" fill="#FFF">4</text>
+  <rect x="148" y="298" width="30" height="24" rx="5" fill="#3B8BD4" stroke="#2C2C2A" stroke-width="0.5"/>
+  <text x="163" y="315" text-anchor="middle" font-size="12" fill="#FFF">2</text>
+  <line x1="140" y1="310" x2="148" y2="310" stroke="#2C2C2A" stroke-width="1" marker-end="url(#arr)"/>
+  <text x="195" y="312" font-size="11" fill="#2C2C2A">|</text>
+  <rect x="210" y="298" width="30" height="24" rx="5" fill="#EF9F27" stroke="#2C2C2A" stroke-width="0.5"/>
+  <text x="225" y="315" text-anchor="middle" font-size="12" fill="#FFF">1</text>
+  <rect x="248" y="298" width="30" height="24" rx="5" fill="#EF9F27" stroke="#2C2C2A" stroke-width="0.5"/>
+  <text x="263" y="315" text-anchor="middle" font-size="12" fill="#FFF">3</text>
+  <line x1="240" y1="310" x2="248" y2="310" stroke="#2C2C2A" stroke-width="1" marker-end="url(#arr)"/>
+
+  <text x="50" y="350" font-size="11" fill="#2C2C2A">Level 2:</text>
+  <rect x="110" y="336" width="30" height="24" rx="5" fill="#3B8BD4" stroke="#2C2C2A" stroke-width="0.5"/>
+  <text x="125" y="353" text-anchor="middle" font-size="12" fill="#FFF">4</text>
+  <text x="148" y="350" font-size="11" fill="#2C2C2A">|</text>
+  <rect x="163" y="336" width="30" height="24" rx="5" fill="#3B8BD4" stroke="#2C2C2A" stroke-width="0.5"/>
+  <text x="178" y="353" text-anchor="middle" font-size="12" fill="#FFF">2</text>
+  <text x="200" y="350" font-size="11" fill="#2C2C2A">|</text>
+  <rect x="215" y="336" width="30" height="24" rx="5" fill="#EF9F27" stroke="#2C2C2A" stroke-width="0.5"/>
+  <text x="230" y="353" text-anchor="middle" font-size="12" fill="#FFF">1</text>
+  <text x="252" y="350" font-size="11" fill="#2C2C2A">|</text>
+  <rect x="267" y="336" width="30" height="24" rx="5" fill="#EF9F27" stroke="#2C2C2A" stroke-width="0.5"/>
+  <text x="282" y="353" text-anchor="middle" font-size="12" fill="#FFF">3</text>
+
+  <line x1="400" y1="355" x2="400" y2="280" stroke="#3B6D11" stroke-width="1.5" marker-end="url(#greedarr)"/>
+  <text x="440" y="320" font-size="11" fill="#3B6D11">merge back up</text>
+  <text x="440" y="334" font-size="11" fill="#3B6D11">O(n) per level</text>
+  <text x="440" y="348" font-size="11" fill="#3B6D11">log n levels</text>
+  <text x="440" y="362" font-size="11" fill="#3B6D11">→ O(n log n)</text>
+
+  <rect x="530" y="320" width="30" height="24" rx="5" fill="#3B6D11" stroke="#2C2C2A" stroke-width="0.5"/>
+  <text x="545" y="337" text-anchor="middle" font-size="12" fill="#FFF">1</text>
+  <rect x="568" y="320" width="30" height="24" rx="5" fill="#3B6D11" stroke="#2C2C2A" stroke-width="0.5"/>
+  <text x="583" y="337" text-anchor="middle" font-size="12" fill="#FFF">2</text>
+  <rect x="606" y="320" width="30" height="24" rx="5" fill="#3B6D11" stroke="#2C2C2A" stroke-width="0.5"/>
+  <text x="621" y="337" text-anchor="middle" font-size="12" fill="#FFF">3</text>
+  <rect x="644" y="320" width="30" height="24" rx="5" fill="#3B6D11" stroke="#2C2C2A" stroke-width="0.5"/>
+  <text x="659" y="337" text-anchor="middle" font-size="12" fill="#FFF">4</text>
+  <line x1="560" y1="332" x2="568" y2="332" stroke="#2C2C2A" stroke-width="1" marker-end="url(#arr)"/>
+  <line x1="598" y1="332" x2="606" y2="332" stroke="#2C2C2A" stroke-width="1" marker-end="url(#arr)"/>
+  <line x1="636" y1="332" x2="644" y2="332" stroke="#2C2C2A" stroke-width="1" marker-end="url(#arr)"/>
+  <text x="590" y="360" text-anchor="middle" font-size="11" fill="#3B6D11">sorted ✓</text>
+
+  <defs>
+    <marker id="arr" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#2C2C2A"/>
+    </marker>
+    <marker id="redarr" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#E24B4A"/>
+    </marker>
+    <marker id="greedarr" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#3B6D11"/>
+    </marker>
+  </defs>
+</svg>
