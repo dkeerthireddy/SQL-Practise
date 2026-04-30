@@ -1,0 +1,168 @@
+<svg viewBox="0 0 680 440" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+  <rect width="680" height="440" fill="#FFFFFF"/>
+  <defs>
+    <marker id="arr" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L6,3 z" fill="#2C2C2A"/>
+    </marker>
+    <marker id="arr_o" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L6,3 z" fill="#EF9F27"/>
+    </marker>
+  </defs>
+
+  <text x="340" y="24" text-anchor="middle" font-size="15" font-weight="600" fill="#2C2C2A">Double Linked List — Merge Sort &amp; DFS Splice</text>
+
+  <!-- Divider -->
+  <line x1="340" y1="36" x2="340" y2="340" stroke="#E0E0E0" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- ===== LEFT: Merge Sort ===== -->
+  <text x="170" y="50" text-anchor="middle" font-size="13" font-weight="500" fill="#2C2C2A">Pattern 1: Merge Sort on LL</text>
+  <text x="170" y="65" text-anchor="middle" font-size="11" fill="#888780">Sort List (#148) — O(n log n) / O(log n)</text>
+
+  <!-- Input list 4→2→1→3 -->
+  <rect x="30"  y="76" width="34" height="26" rx="6" fill="#FFFFFF" stroke="#2C2C2A" stroke-width="0.5"/>
+  <text x="47"  y="94" text-anchor="middle" font-size="13" fill="#2C2C2A">4</text>
+  <line x1="64" y1="89" x2="72" y2="89" stroke="#2C2C2A" stroke-width="1.5" marker-end="url(#arr)"/>
+  <rect x="72"  y="76" width="34" height="26" rx="6" fill="#FFFFFF" stroke="#2C2C2A" stroke-width="0.5"/>
+  <text x="89"  y="94" text-anchor="middle" font-size="13" fill="#2C2C2A">2</text>
+  <line x1="106" y1="89" x2="114" y2="89" stroke="#2C2C2A" stroke-width="1.5" marker-end="url(#arr)"/>
+  <rect x="114" y="76" width="34" height="26" rx="6" fill="#FFFFFF" stroke="#2C2C2A" stroke-width="0.5"/>
+  <text x="131" y="94" text-anchor="middle" font-size="13" fill="#2C2C2A">1</text>
+  <line x1="148" y1="89" x2="156" y2="89" stroke="#2C2C2A" stroke-width="1.5" marker-end="url(#arr)"/>
+  <rect x="156" y="76" width="34" height="26" rx="6" fill="#FFFFFF" stroke="#2C2C2A" stroke-width="0.5"/>
+  <text x="173" y="94" text-anchor="middle" font-size="13" fill="#2C2C2A">3</text>
+  <text x="47"  y="113" text-anchor="middle" font-size="10" fill="#3B8BD4">slow</text>
+  <text x="89"  y="113" text-anchor="middle" font-size="10" fill="#EF9F27">fast</text>
+
+  <!-- Split arrow + halves -->
+  <text x="110" y="132" text-anchor="middle" font-size="11" fill="#888780">↓ split at slow.next</text>
+
+  <rect x="20"  y="140" width="34" height="26" rx="6" fill="#EEF5FF" stroke="#3B8BD4" stroke-width="1"/>
+  <text x="37"  y="158" text-anchor="middle" font-size="13" fill="#3B8BD4">4</text>
+  <line x1="54" y1="153" x2="62" y2="153" stroke="#2C2C2A" stroke-width="1.5" marker-end="url(#arr)"/>
+  <rect x="62"  y="140" width="34" height="26" rx="6" fill="#EEF5FF" stroke="#3B8BD4" stroke-width="1"/>
+  <text x="79"  y="158" text-anchor="middle" font-size="13" fill="#3B8BD4">2</text>
+  <text x="49"  y="177" text-anchor="middle" font-size="10" fill="#888780">left</text>
+
+  <rect x="120" y="140" width="34" height="26" rx="6" fill="#F5F5F5" stroke="#888780" stroke-width="0.5"/>
+  <text x="137" y="158" text-anchor="middle" font-size="13" fill="#2C2C2A">1</text>
+  <line x1="154" y1="153" x2="162" y2="153" stroke="#2C2C2A" stroke-width="1.5" marker-end="url(#arr)"/>
+  <rect x="162" y="140" width="34" height="26" rx="6" fill="#F5F5F5" stroke="#888780" stroke-width="0.5"/>
+  <text x="179" y="158" text-anchor="middle" font-size="13" fill="#2C2C2A">3</text>
+  <text x="149" y="177" text-anchor="middle" font-size="10" fill="#888780">right</text>
+
+  <!-- Sort each half -->
+  <text x="49"  y="196" text-anchor="middle" font-size="10" fill="#888780">sort →</text>
+  <text x="149" y="196" text-anchor="middle" font-size="10" fill="#888780">sort →</text>
+
+  <rect x="20"  y="202" width="34" height="26" rx="6" fill="#EEF5FF" stroke="#3B8BD4" stroke-width="1"/>
+  <text x="37"  y="220" text-anchor="middle" font-size="13" fill="#3B8BD4">2</text>
+  <line x1="54" y1="215" x2="62" y2="215" stroke="#2C2C2A" stroke-width="1.5" marker-end="url(#arr)"/>
+  <rect x="62"  y="202" width="34" height="26" rx="6" fill="#EEF5FF" stroke="#3B8BD4" stroke-width="1"/>
+  <text x="79"  y="220" text-anchor="middle" font-size="13" fill="#3B8BD4">4</text>
+
+  <rect x="120" y="202" width="34" height="26" rx="6" fill="#F5F5F5" stroke="#888780" stroke-width="0.5"/>
+  <text x="137" y="220" text-anchor="middle" font-size="13" fill="#2C2C2A">1</text>
+  <line x1="154" y1="215" x2="162" y2="215" stroke="#2C2C2A" stroke-width="1.5" marker-end="url(#arr)"/>
+  <rect x="162" y="202" width="34" height="26" rx="6" fill="#F5F5F5" stroke="#888780" stroke-width="0.5"/>
+  <text x="179" y="220" text-anchor="middle" font-size="13" fill="#2C2C2A">3</text>
+
+  <!-- Merge -->
+  <text x="110" y="248" text-anchor="middle" font-size="11" fill="#888780">↓ merge (two-pointer)</text>
+
+  <rect x="18"  y="254" width="30" height="26" rx="6" fill="#EEFFF3" stroke="#3B6D11" stroke-width="1"/>
+  <text x="33"  y="272" text-anchor="middle" font-size="13" fill="#3B6D11">1</text>
+  <line x1="48" y1="267" x2="56" y2="267" stroke="#2C2C2A" stroke-width="1.5" marker-end="url(#arr)"/>
+  <rect x="56"  y="254" width="30" height="26" rx="6" fill="#EEFFF3" stroke="#3B6D11" stroke-width="1"/>
+  <text x="71"  y="272" text-anchor="middle" font-size="13" fill="#3B6D11">2</text>
+  <line x1="86" y1="267" x2="94" y2="267" stroke="#2C2C2A" stroke-width="1.5" marker-end="url(#arr)"/>
+  <rect x="94"  y="254" width="30" height="26" rx="6" fill="#EEFFF3" stroke="#3B6D11" stroke-width="1"/>
+  <text x="109" y="272" text-anchor="middle" font-size="13" fill="#3B6D11">3</text>
+  <line x1="124" y1="267" x2="132" y2="267" stroke="#2C2C2A" stroke-width="1.5" marker-end="url(#arr)"/>
+  <rect x="132" y="254" width="30" height="26" rx="6" fill="#EEFFF3" stroke="#3B6D11" stroke-width="1"/>
+  <text x="147" y="272" text-anchor="middle" font-size="13" fill="#3B6D11">4</text>
+  <text x="93"  y="294" text-anchor="middle" font-size="10" fill="#3B6D11">1→2→3→4 ✓</text>
+
+  <!-- ===== RIGHT: DFS Splice ===== -->
+  <text x="510" y="50" text-anchor="middle" font-size="13" font-weight="500" fill="#2C2C2A">Pattern 2: DFS Splice</text>
+  <text x="510" y="65" text-anchor="middle" font-size="11" fill="#888780">Flatten Multilevel DLL (#430) — O(n) / O(1)</text>
+
+  <!-- BEFORE -->
+  <text x="356" y="84" font-size="11" fill="#888780">BEFORE:</text>
+  <rect x="356" y="89" width="30" height="26" rx="6" fill="#FFFFFF" stroke="#2C2C2A" stroke-width="0.5"/>
+  <text x="371" y="107" text-anchor="middle" font-size="12" fill="#2C2C2A">1</text>
+  <line x1="386" y1="102" x2="394" y2="102" stroke="#2C2C2A" stroke-width="1.5" marker-end="url(#arr)"/>
+  <rect x="394" y="89" width="30" height="26" rx="6" fill="#FFFFFF" stroke="#2C2C2A" stroke-width="0.5"/>
+  <text x="409" y="107" text-anchor="middle" font-size="12" fill="#2C2C2A">2</text>
+  <line x1="424" y1="102" x2="432" y2="102" stroke="#2C2C2A" stroke-width="1.5" marker-end="url(#arr)"/>
+  <!-- node 3 has child -->
+  <rect x="432" y="89" width="30" height="26" rx="6" fill="#EEF5FF" stroke="#3B8BD4" stroke-width="1.5"/>
+  <text x="447" y="107" text-anchor="middle" font-size="12" fill="#3B8BD4">3</text>
+  <line x1="462" y1="102" x2="470" y2="102" stroke="#2C2C2A" stroke-width="1.5" marker-end="url(#arr)"/>
+  <rect x="470" y="89" width="30" height="26" rx="6" fill="#FFFFFF" stroke="#2C2C2A" stroke-width="0.5"/>
+  <text x="485" y="107" text-anchor="middle" font-size="12" fill="#2C2C2A">4</text>
+
+  <!-- child pointer from 3 -->
+  <line x1="447" y1="115" x2="447" y2="133" stroke="#EF9F27" stroke-width="1.5" marker-end="url(#arr_o)" stroke-dasharray="3,2"/>
+  <text x="458" y="128" font-size="9" fill="#EF9F27">child</text>
+
+  <!-- child list 7→8→9 -->
+  <rect x="415" y="136" width="30" height="26" rx="6" fill="#F5F5F5" stroke="#888780" stroke-width="0.5"/>
+  <text x="430" y="154" text-anchor="middle" font-size="12" fill="#2C2C2A">7</text>
+  <line x1="445" y1="149" x2="453" y2="149" stroke="#2C2C2A" stroke-width="1.5" marker-end="url(#arr)"/>
+  <rect x="453" y="136" width="30" height="26" rx="6" fill="#F5F5F5" stroke="#888780" stroke-width="0.5"/>
+  <text x="468" y="154" text-anchor="middle" font-size="12" fill="#2C2C2A">8</text>
+  <line x1="483" y1="149" x2="491" y2="149" stroke="#2C2C2A" stroke-width="1.5" marker-end="url(#arr)"/>
+  <rect x="491" y="136" width="30" height="26" rx="6" fill="#F5F5F5" stroke="#888780" stroke-width="0.5"/>
+  <text x="506" y="154" text-anchor="middle" font-size="12" fill="#2C2C2A">9</text>
+
+  <!-- 4-pointer stitch labels -->
+  <text x="356" y="178" font-size="10" font-weight="500" fill="#2C2C2A">4-pointer stitch:</text>
+  <text x="356" y="193" font-size="10" fill="#3B8BD4">① cur.next = child_head</text>
+  <text x="356" y="208" font-size="10" fill="#3B8BD4">② child_head.prev = cur</text>
+  <text x="356" y="223" font-size="10" fill="#EF9F27">③ child_tail.next = next_node</text>
+  <text x="356" y="238" font-size="10" fill="#EF9F27">④ next_node.prev = child_tail</text>
+
+  <!-- AFTER -->
+  <text x="356" y="262" font-size="11" fill="#888780">AFTER (splice complete):</text>
+  <rect x="352" y="267" width="26" height="24" rx="5" fill="#EEFFF3" stroke="#3B6D11" stroke-width="1"/>
+  <text x="365" y="284" text-anchor="middle" font-size="11" fill="#3B6D11">1</text>
+  <line x1="378" y1="279" x2="384" y2="279" stroke="#2C2C2A" stroke-width="1" marker-end="url(#arr)"/>
+  <rect x="384" y="267" width="26" height="24" rx="5" fill="#EEFFF3" stroke="#3B6D11" stroke-width="1"/>
+  <text x="397" y="284" text-anchor="middle" font-size="11" fill="#3B6D11">2</text>
+  <line x1="410" y1="279" x2="416" y2="279" stroke="#2C2C2A" stroke-width="1" marker-end="url(#arr)"/>
+  <rect x="416" y="267" width="26" height="24" rx="5" fill="#EEFFF3" stroke="#3B6D11" stroke-width="1"/>
+  <text x="429" y="284" text-anchor="middle" font-size="11" fill="#3B6D11">3</text>
+  <line x1="442" y1="279" x2="448" y2="279" stroke="#2C2C2A" stroke-width="1" marker-end="url(#arr)"/>
+  <rect x="448" y="267" width="26" height="24" rx="5" fill="#EEFFF3" stroke="#3B6D11" stroke-width="1"/>
+  <text x="461" y="284" text-anchor="middle" font-size="11" fill="#3B6D11">7</text>
+  <line x1="474" y1="279" x2="480" y2="279" stroke="#2C2C2A" stroke-width="1" marker-end="url(#arr)"/>
+  <rect x="480" y="267" width="26" height="24" rx="5" fill="#EEFFF3" stroke="#3B6D11" stroke-width="1"/>
+  <text x="493" y="284" text-anchor="middle" font-size="11" fill="#3B6D11">8</text>
+  <line x1="506" y1="279" x2="512" y2="279" stroke="#2C2C2A" stroke-width="1" marker-end="url(#arr)"/>
+  <rect x="512" y="267" width="26" height="24" rx="5" fill="#EEFFF3" stroke="#3B6D11" stroke-width="1"/>
+  <text x="525" y="284" text-anchor="middle" font-size="11" fill="#3B6D11">9</text>
+  <line x1="538" y1="279" x2="544" y2="279" stroke="#2C2C2A" stroke-width="1" marker-end="url(#arr)"/>
+  <rect x="544" y="267" width="26" height="24" rx="5" fill="#EEFFF3" stroke="#3B6D11" stroke-width="1"/>
+  <text x="557" y="284" text-anchor="middle" font-size="11" fill="#3B6D11">4</text>
+
+  <!-- Bottom bar -->
+  <rect x="10" y="345" width="660" height="84" rx="6" fill="#F8F8F6" stroke="#E0E0E0" stroke-width="0.5"/>
+  <text x="340" y="364" text-anchor="middle" font-size="12" font-weight="500" fill="#2C2C2A">DLL Pointer Operations — Count the Joins</text>
+
+  <text x="30"  y="382" font-size="11" fill="#888780">Operation</text>
+  <text x="200" y="382" font-size="11" fill="#888780">Pointer updates</text>
+  <text x="370" y="382" font-size="11" fill="#888780">Why</text>
+  <line x1="20" y1="387" x2="660" y2="387" stroke="#E0E0E0" stroke-width="0.5"/>
+
+  <text x="30"  y="401" font-size="11" fill="#2C2C2A">Delete node</text>
+  <text x="200" y="401" font-size="11" fill="#3B8BD4">2 half-ptrs</text>
+  <text x="370" y="401" font-size="11" fill="#888780">break 1 join — predecessor skips over node</text>
+
+  <text x="30"  y="416" font-size="11" fill="#2C2C2A">Insert/splice</text>
+  <text x="200" y="416" font-size="11" fill="#EF9F27">4 half-ptrs</text>
+  <text x="370" y="416" font-size="11" fill="#888780">create 2 joins — inline child list insertion</text>
+
+  <text x="30"  y="431" font-size="11" fill="#2C2C2A">Move to front</text>
+  <text x="200" y="431" font-size="11" fill="#3B6D11">6 half-ptrs</text>
+  <text x="370" y="431" font-size="11" fill="#888780">delete (2) + insert at head (4) — LRU cache hit</text>
+</svg>

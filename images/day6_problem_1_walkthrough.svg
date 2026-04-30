@@ -1,0 +1,171 @@
+<svg viewBox="0 0 680 700" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+  <rect width="680" height="700" fill="#FFFFFF"/>
+  <defs>
+    <marker id="arr" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L6,3 z" fill="#2C2C2A"/>
+    </marker>
+  </defs>
+
+  <text x="340" y="22" text-anchor="middle" font-size="15" font-weight="600" fill="#2C2C2A">Sort List (#148) — Merge Sort Walkthrough</text>
+  <text x="340" y="38" text-anchor="middle" font-size="11" fill="#888780">Input: 4→2→1→3   Expected: 1→2→3→4</text>
+
+  <!-- ===== FRAME 1: Initialize ===== -->
+  <circle cx="22" cy="62" r="12" fill="#2C2C2A"/>
+  <text x="22" y="67" text-anchor="middle" font-size="11" fill="#FFFFFF">1</text>
+  <text x="46" y="67" font-size="12" font-weight="500" fill="#2C2C2A">Initialize: slow=N1[4], fast=N2[2]  (fast=head.next offset)</text>
+  <rect x="10" y="74" width="660" height="64" rx="6" fill="#F8F8F6" stroke="#E0E0E0" stroke-width="0.5"/>
+
+  <!-- List: N1[4]→N2[2]→N3[1]→N4[3] -->
+  <rect x="80"  y="85" width="44" height="30" rx="8" fill="#FFFFFF" stroke="#3B8BD4" stroke-width="1.5"/>
+  <text x="102" y="105" text-anchor="middle" font-size="13" fill="#3B8BD4">4</text>
+  <line x1="124" y1="100" x2="132" y2="100" stroke="#2C2C2A" stroke-width="1.5" marker-end="url(#arr)"/>
+  <rect x="132" y="85" width="44" height="30" rx="8" fill="#FFFFFF" stroke="#EF9F27" stroke-width="1.5"/>
+  <text x="154" y="105" text-anchor="middle" font-size="13" fill="#EF9F27">2</text>
+  <line x1="176" y1="100" x2="184" y2="100" stroke="#2C2C2A" stroke-width="1.5" marker-end="url(#arr)"/>
+  <rect x="184" y="85" width="44" height="30" rx="8" fill="#FFFFFF" stroke="#888780" stroke-width="0.5"/>
+  <text x="206" y="105" text-anchor="middle" font-size="13" fill="#2C2C2A">1</text>
+  <line x1="228" y1="100" x2="236" y2="100" stroke="#2C2C2A" stroke-width="1.5" marker-end="url(#arr)"/>
+  <rect x="236" y="85" width="44" height="30" rx="8" fill="#FFFFFF" stroke="#888780" stroke-width="0.5"/>
+  <text x="258" y="105" text-anchor="middle" font-size="13" fill="#2C2C2A">3</text>
+
+  <text x="102" y="124" text-anchor="middle" font-size="10" fill="#3B8BD4">slow</text>
+  <text x="154" y="124" text-anchor="middle" font-size="10" fill="#EF9F27">fast</text>
+  <text x="420" y="96" font-size="11" fill="#2C2C2A">slow=N1[val=4]</text>
+  <text x="420" y="112" font-size="11" fill="#2C2C2A">fast=N2[val=2]  (head.next, not head)</text>
+  <text x="420" y="128" font-size="10" fill="#888780">loop condition: fast and fast.next</text>
+
+  <!-- ===== FRAME 2: After loop iter 1 ===== -->
+  <circle cx="22" cy="158" r="12" fill="#2C2C2A"/>
+  <text x="22" y="163" text-anchor="middle" font-size="11" fill="#FFFFFF">2</text>
+  <text x="46" y="163" font-size="12" font-weight="500" fill="#2C2C2A">Loop iter 1: fast=N2[2], fast.next=N3[1] → enter.  slow→N2, fast→N4</text>
+  <rect x="10" y="170" width="660" height="64" rx="6" fill="#F8F8F6" stroke="#E0E0E0" stroke-width="0.5"/>
+
+  <rect x="80"  y="181" width="44" height="30" rx="8" fill="#FFFFFF" stroke="#888780" stroke-width="0.5"/>
+  <text x="102" y="201" text-anchor="middle" font-size="13" fill="#2C2C2A">4</text>
+  <line x1="124" y1="196" x2="132" y2="196" stroke="#2C2C2A" stroke-width="1.5" marker-end="url(#arr)"/>
+  <rect x="132" y="181" width="44" height="30" rx="8" fill="#FFFFFF" stroke="#3B8BD4" stroke-width="1.5"/>
+  <text x="154" y="201" text-anchor="middle" font-size="13" fill="#3B8BD4">2</text>
+  <line x1="176" y1="196" x2="184" y2="196" stroke="#2C2C2A" stroke-width="1.5" marker-end="url(#arr)"/>
+  <rect x="184" y="181" width="44" height="30" rx="8" fill="#FFFFFF" stroke="#888780" stroke-width="0.5"/>
+  <text x="206" y="201" text-anchor="middle" font-size="13" fill="#2C2C2A">1</text>
+  <line x1="228" y1="196" x2="236" y2="196" stroke="#2C2C2A" stroke-width="1.5" marker-end="url(#arr)"/>
+  <rect x="236" y="181" width="44" height="30" rx="8" fill="#FFFFFF" stroke="#EF9F27" stroke-width="1.5"/>
+  <text x="258" y="201" text-anchor="middle" font-size="13" fill="#EF9F27">3</text>
+
+  <text x="154" y="220" text-anchor="middle" font-size="10" fill="#3B8BD4">slow</text>
+  <text x="258" y="220" text-anchor="middle" font-size="10" fill="#EF9F27">fast</text>
+  <text x="420" y="192" font-size="11" fill="#2C2C2A">slow=N2[val=2], fast=N4[val=3]</text>
+  <text x="420" y="208" font-size="10" fill="#888780">Loop iter 2: fast=N4, fast.next=None → exit</text>
+  <text x="420" y="222" font-size="10" fill="#EF9F27">slow is now the LAST node of left half</text>
+
+  <!-- ===== FRAME 3: Sever ===== -->
+  <circle cx="22" cy="254" r="12" fill="#2C2C2A"/>
+  <text x="22" y="259" text-anchor="middle" font-size="11" fill="#FFFFFF">3</text>
+  <text x="46" y="259" font-size="12" font-weight="500" fill="#2C2C2A">Sever: mid=slow.next=N3[1],  slow.next=None  →  two independent halves</text>
+  <rect x="10" y="266" width="660" height="68" rx="6" fill="#F8F8F6" stroke="#E0E0E0" stroke-width="0.5"/>
+
+  <!-- Left half -->
+  <rect x="30"  y="277" width="44" height="30" rx="8" fill="#EEF5FF" stroke="#3B8BD4" stroke-width="1.5"/>
+  <text x="52"  y="297" text-anchor="middle" font-size="13" fill="#3B8BD4">4</text>
+  <line x1="74" y1="292" x2="82" y2="292" stroke="#2C2C2A" stroke-width="1.5" marker-end="url(#arr)"/>
+  <rect x="82"  y="277" width="44" height="30" rx="8" fill="#EEF5FF" stroke="#3B8BD4" stroke-width="1.5"/>
+  <text x="104" y="297" text-anchor="middle" font-size="13" fill="#3B8BD4">2</text>
+  <!-- severed: no arrow to right -->
+  <text x="68"  y="320" text-anchor="middle" font-size="10" fill="#3B8BD4">left=[4→2]</text>
+  <!-- ✂ symbol -->
+  <text x="140" y="297" font-size="14" fill="#E24B4A">✂</text>
+
+  <!-- Right half -->
+  <rect x="180" y="277" width="44" height="30" rx="8" fill="#F5F5F5" stroke="#888780" stroke-width="0.5"/>
+  <text x="202" y="297" text-anchor="middle" font-size="13" fill="#2C2C2A">1</text>
+  <line x1="224" y1="292" x2="232" y2="292" stroke="#2C2C2A" stroke-width="1.5" marker-end="url(#arr)"/>
+  <rect x="232" y="277" width="44" height="30" rx="8" fill="#F5F5F5" stroke="#888780" stroke-width="0.5"/>
+  <text x="254" y="297" text-anchor="middle" font-size="13" fill="#2C2C2A">3</text>
+  <text x="216" y="320" text-anchor="middle" font-size="10" fill="#888780">right=[1→3]</text>
+
+  <text x="420" y="288" font-size="11" fill="#E24B4A">mid = slow.next = N3[val=1]</text>
+  <text x="420" y="304" font-size="11" fill="#E24B4A">slow.next = None  ← CRITICAL SEVER</text>
+  <text x="420" y="320" font-size="10" fill="#888780">Recurse: sortList(left), sortList(right)</text>
+
+  <!-- ===== FRAME 4: Recurse left ===== -->
+  <circle cx="22" cy="356" r="12" fill="#2C2C2A"/>
+  <text x="22" y="361" text-anchor="middle" font-size="11" fill="#FFFFFF">4</text>
+  <text x="46" y="361" font-size="12" font-weight="500" fill="#2C2C2A">Recurse left [4→2]:  slow=N1[4], fast=N1.next=N2[2],  fast.next=None → skip loop</text>
+  <rect x="10" y="368" width="660" height="64" rx="6" fill="#F8F8F6" stroke="#E0E0E0" stroke-width="0.5"/>
+
+  <rect x="30"  y="379" width="44" height="30" rx="8" fill="#EEF5FF" stroke="#3B8BD4" stroke-width="1.5"/>
+  <text x="52"  y="399" text-anchor="middle" font-size="13" fill="#3B8BD4">4</text>
+  <line x1="74" y1="394" x2="82" y2="394" stroke="#2C2C2A" stroke-width="1.5" marker-end="url(#arr)"/>
+  <rect x="82"  y="379" width="44" height="30" rx="8" fill="#EEF5FF" stroke="#3B8BD4" stroke-width="1.5"/>
+  <text x="104" y="399" text-anchor="middle" font-size="13" fill="#3B8BD4">2</text>
+  <text x="52"  y="418" text-anchor="middle" font-size="10" fill="#888780">slow</text>
+  <text x="104" y="418" text-anchor="middle" font-size="10" fill="#EF9F27">fast</text>
+
+  <text x="200" y="388" font-size="11" fill="#2C2C2A">fast.next=None → loop skips</text>
+  <text x="200" y="404" font-size="11" fill="#2C2C2A">mid=N2[2], sever N1.next=None</text>
+  <text x="200" y="420" font-size="11" fill="#3B6D11">Merge([4],[2]) → 2→4 ✓</text>
+
+  <!-- ===== FRAME 5: Recurse right ===== -->
+  <circle cx="22" cy="454" r="12" fill="#2C2C2A"/>
+  <text x="22" y="459" text-anchor="middle" font-size="11" fill="#FFFFFF">5</text>
+  <text x="46" y="459" font-size="12" font-weight="500" fill="#2C2C2A">Recurse right [1→3]:  slow=N3[1], fast=N3.next=N4[3],  fast.next=None → skip loop</text>
+  <rect x="10" y="466" width="660" height="64" rx="6" fill="#F8F8F6" stroke="#E0E0E0" stroke-width="0.5"/>
+
+  <rect x="30"  y="477" width="44" height="30" rx="8" fill="#F5F5F5" stroke="#888780" stroke-width="0.5"/>
+  <text x="52"  y="497" text-anchor="middle" font-size="13" fill="#2C2C2A">1</text>
+  <line x1="74" y1="492" x2="82" y2="492" stroke="#2C2C2A" stroke-width="1.5" marker-end="url(#arr)"/>
+  <rect x="82"  y="477" width="44" height="30" rx="8" fill="#F5F5F5" stroke="#888780" stroke-width="0.5"/>
+  <text x="104" y="497" text-anchor="middle" font-size="13" fill="#2C2C2A">3</text>
+  <text x="52"  y="516" text-anchor="middle" font-size="10" fill="#888780">slow</text>
+  <text x="104" y="516" text-anchor="middle" font-size="10" fill="#EF9F27">fast</text>
+
+  <text x="200" y="486" font-size="11" fill="#2C2C2A">fast.next=None → loop skips</text>
+  <text x="200" y="502" font-size="11" fill="#2C2C2A">mid=N4[3], sever N3.next=None</text>
+  <text x="200" y="518" font-size="11" fill="#3B6D11">Merge([1],[3]) → 1→3 ✓</text>
+
+  <!-- ===== FRAME 6: Final merge ===== -->
+  <circle cx="22" cy="552" r="12" fill="#2C2C2A"/>
+  <text x="22" y="557" text-anchor="middle" font-size="11" fill="#FFFFFF">6</text>
+  <text x="46" y="557" font-size="12" font-weight="500" fill="#2C2C2A">Final merge: [2→4] vs [1→3]  —  two-pointer comparison at dummy head</text>
+  <rect x="10" y="564" width="660" height="80" rx="6" fill="#F8F8F6" stroke="#E0E0E0" stroke-width="0.5"/>
+
+  <text x="20" y="580" font-size="10" fill="#888780">l1:</text>
+  <rect x="34"  y="570" width="32" height="26" rx="6" fill="#EEF5FF" stroke="#3B8BD4" stroke-width="1"/>
+  <text x="50"  y="588" text-anchor="middle" font-size="12" fill="#3B8BD4">2</text>
+  <line x1="66" y1="583" x2="74" y2="583" stroke="#2C2C2A" stroke-width="1" marker-end="url(#arr)"/>
+  <rect x="74"  y="570" width="32" height="26" rx="6" fill="#EEF5FF" stroke="#3B8BD4" stroke-width="1"/>
+  <text x="90"  y="588" text-anchor="middle" font-size="12" fill="#3B8BD4">4</text>
+
+  <text x="20" y="610" font-size="10" fill="#888780">l2:</text>
+  <rect x="34"  y="600" width="32" height="26" rx="6" fill="#F5F5F5" stroke="#888780" stroke-width="0.5"/>
+  <text x="50"  y="618" text-anchor="middle" font-size="12" fill="#2C2C2A">1</text>
+  <line x1="66" y1="613" x2="74" y2="613" stroke="#2C2C2A" stroke-width="1" marker-end="url(#arr)"/>
+  <rect x="74"  y="600" width="32" height="26" rx="6" fill="#F5F5F5" stroke="#888780" stroke-width="0.5"/>
+  <text x="90"  y="618" text-anchor="middle" font-size="12" fill="#2C2C2A">3</text>
+
+  <text x="160" y="580" font-size="10" fill="#EF9F27">2 vs 1 → pick 1</text>
+  <text x="160" y="595" font-size="10" fill="#EF9F27">2 vs 3 → pick 2</text>
+  <text x="160" y="610" font-size="10" fill="#EF9F27">4 vs 3 → pick 3</text>
+  <text x="160" y="625" font-size="10" fill="#EF9F27">l2 done → attach 4</text>
+
+  <!-- Growing result -->
+  <rect x="280" y="570" width="32" height="26" rx="6" fill="#EEFFF3" stroke="#3B6D11" stroke-width="1"/>
+  <text x="296" y="588" text-anchor="middle" font-size="12" fill="#3B6D11">1</text>
+  <line x1="312" y1="583" x2="320" y2="583" stroke="#2C2C2A" stroke-width="1" marker-end="url(#arr)"/>
+  <rect x="320" y="570" width="32" height="26" rx="6" fill="#EEFFF3" stroke="#3B6D11" stroke-width="1"/>
+  <text x="336" y="588" text-anchor="middle" font-size="12" fill="#3B6D11">2</text>
+  <line x1="352" y1="583" x2="360" y2="583" stroke="#2C2C2A" stroke-width="1" marker-end="url(#arr)"/>
+  <rect x="360" y="570" width="32" height="26" rx="6" fill="#EEFFF3" stroke="#3B6D11" stroke-width="1"/>
+  <text x="376" y="588" text-anchor="middle" font-size="12" fill="#3B6D11">3</text>
+  <line x1="392" y1="583" x2="400" y2="583" stroke="#2C2C2A" stroke-width="1" marker-end="url(#arr)"/>
+  <rect x="400" y="570" width="32" height="26" rx="6" fill="#EEFFF3" stroke="#3B6D11" stroke-width="1"/>
+  <text x="416" y="588" text-anchor="middle" font-size="12" fill="#3B6D11">4</text>
+  <text x="350" y="612" text-anchor="middle" font-size="10" fill="#3B6D11">result: dummy→1→2→3→4</text>
+
+  <!-- ===== FRAME 7: Result ===== -->
+  <circle cx="22" cy="662" r="12" fill="#3B6D11"/>
+  <text x="22" y="667" text-anchor="middle" font-size="11" fill="#FFFFFF">7</text>
+  <text x="46" y="667" font-size="12" font-weight="500" fill="#2C2C2A">Return dummy.next — sorted list complete</text>
+  <rect x="10" y="674" width="660" height="20" rx="6" fill="#EEFFF3" stroke="#3B6D11" stroke-width="1"/>
+  <text x="340" y="688" text-anchor="middle" font-size="12" fill="#3B6D11">1 → 2 → 3 → 4   ✓  (O(n log n) time, O(log n) stack space)</text>
+</svg>
