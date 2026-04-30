@@ -1,0 +1,147 @@
+<svg viewBox="0 0 680 680" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+  <rect width="680" height="680" fill="#FFFFFF"/>
+  <defs>
+    <marker id="arr" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L6,3 z" fill="#2C2C2A"/>
+    </marker>
+  </defs>
+
+  <text x="340" y="22" text-anchor="middle" font-size="15" font-weight="500" fill="#2C2C2A">Add Two Numbers II — Visual Walkthrough</text>
+  <text x="340" y="38" text-anchor="middle" font-size="11" fill="#888780">7→2→4→3  +  5→6→4  =  7→8→0→7   (7243 + 564 = 7807)</text>
+
+  <!-- ===== FRAME 1: Build stacks ===== -->
+  <circle cx="20" cy="62" r="12" fill="#2C2C2A"/>
+  <text x="20" y="67" text-anchor="middle" font-size="11" fill="#FFFFFF">1</text>
+  <text x="50" y="62" font-size="12" font-weight="500" fill="#2C2C2A">Build stacks — push all digits (top = LSD)</text>
+  <rect x="10" y="74" width="660" height="90" rx="6" fill="#F8F8F6" stroke="#E0E0E0" stroke-width="0.5"/>
+
+  <!-- s1 stack visual -->
+  <text x="90" y="92" text-anchor="middle" font-size="11" fill="#888780">s1 (l1=7→2→4→3)</text>
+  <rect x="60" y="96" width="60" height="22" rx="3" fill="#EEF5FF" stroke="#3B8BD4" stroke-width="0.5"/>
+  <text x="90" y="112" text-anchor="middle" font-size="11" fill="#3B8BD4">3 ← top</text>
+  <rect x="60" y="118" width="60" height="22" rx="3" fill="#EEF5FF" stroke="#3B8BD4" stroke-width="0.5"/>
+  <text x="90" y="134" text-anchor="middle" font-size="11" fill="#3B8BD4">4</text>
+  <rect x="60" y="140" width="60" height="22" rx="3" fill="#EEF5FF" stroke="#3B8BD4" stroke-width="0.5"/>
+  <text x="90" y="156" text-anchor="middle" font-size="11" fill="#3B8BD4">2</text>
+
+  <!-- s2 stack visual -->
+  <text x="220" y="92" text-anchor="middle" font-size="11" fill="#888780">s2 (l2=5→6→4)</text>
+  <rect x="190" y="96" width="60" height="22" rx="3" fill="#F5F5F5" stroke="#888780" stroke-width="0.5"/>
+  <text x="220" y="112" text-anchor="middle" font-size="11" fill="#2C2C2A">4 ← top</text>
+  <rect x="190" y="118" width="60" height="22" rx="3" fill="#F5F5F5" stroke="#888780" stroke-width="0.5"/>
+  <text x="220" y="134" text-anchor="middle" font-size="11" fill="#2C2C2A">6</text>
+  <rect x="190" y="140" width="60" height="22" rx="3" fill="#F5F5F5" stroke="#888780" stroke-width="0.5"/>
+  <text x="220" y="156" text-anchor="middle" font-size="11" fill="#2C2C2A">5</text>
+
+  <!-- s1 bottom row (7 still in stack) -->
+  <rect x="60" y="162" width="60" height="22" rx="3" fill="#EEF5FF" stroke="#3B8BD4" stroke-width="0.5"/>
+  <text x="90" y="178" text-anchor="middle" font-size="11" fill="#3B8BD4">7</text>
+
+  <!-- result / carry state -->
+  <text x="420" y="100" font-size="11" fill="#2C2C2A">carry = 0</text>
+  <text x="420" y="116" font-size="11" fill="#2C2C2A">dummy → [none]</text>
+  <text x="420" y="132" font-size="11" fill="#888780">s1=[7,2,4,3]  s2=[5,6,4]</text>
+
+  <!-- ===== FRAME 2: Iter 1 (ones) ===== -->
+  <circle cx="20" cy="182" r="12" fill="#2C2C2A"/>
+  <text x="20" y="187" text-anchor="middle" font-size="11" fill="#FFFFFF">2</text>
+  <text x="50" y="182" font-size="12" font-weight="500" fill="#2C2C2A">Iter 1 — ones column: pop 3 + pop 4 = 7, carry=0</text>
+  <rect x="10" y="194" width="660" height="80" rx="6" fill="#F8F8F6" stroke="#E0E0E0" stroke-width="0.5"/>
+
+  <text x="90" y="212" text-anchor="middle" font-size="11" fill="#3B8BD4">s1: pop 3</text>
+  <text x="220" y="212" text-anchor="middle" font-size="11" fill="#888780">s2: pop 4</text>
+  <text x="380" y="212" font-size="11" fill="#EF9F27">3 + 4 + 0 = 7, carry=0</text>
+  <text x="380" y="228" font-size="11" fill="#2C2C2A">prepend node(7)</text>
+  <!-- result list -->
+  <rect x="420" y="218" width="30" height="26" rx="6" fill="#EEFFF3" stroke="#3B6D11" stroke-width="1"/>
+  <text x="435" y="236" text-anchor="middle" font-size="13" fill="#3B6D11">7</text>
+  <text x="390" y="235" font-size="10" fill="#888780">dummy→</text>
+
+  <!-- remaining stacks -->
+  <text x="90" y="246" text-anchor="middle" font-size="10" fill="#888780">s1: [7,2,4]</text>
+  <text x="220" y="246" text-anchor="middle" font-size="10" fill="#888780">s2: [5,6]</text>
+  <text x="380" y="252" font-size="10" fill="#2C2C2A">result: dummy → 7</text>
+
+  <!-- ===== FRAME 3: Iter 2 (tens) ===== -->
+  <circle cx="20" cy="292" r="12" fill="#2C2C2A"/>
+  <text x="20" y="297" text-anchor="middle" font-size="11" fill="#FFFFFF">3</text>
+  <text x="50" y="292" font-size="12" font-weight="500" fill="#2C2C2A">Iter 2 — tens column: pop 4 + pop 6 = 10, carry=1</text>
+  <rect x="10" y="304" width="660" height="80" rx="6" fill="#F8F8F6" stroke="#E0E0E0" stroke-width="0.5"/>
+
+  <text x="90" y="322" text-anchor="middle" font-size="11" fill="#3B8BD4">s1: pop 4</text>
+  <text x="220" y="322" text-anchor="middle" font-size="11" fill="#888780">s2: pop 6</text>
+  <text x="380" y="322" font-size="11" fill="#EF9F27">4 + 6 + 0 = 10, carry=1</text>
+  <text x="380" y="338" font-size="11" fill="#2C2C2A">prepend node(0)</text>
+  <!-- result list -->
+  <rect x="420" y="328" width="30" height="26" rx="6" fill="#EEFFF3" stroke="#3B6D11" stroke-width="1"/>
+  <text x="435" y="346" text-anchor="middle" font-size="13" fill="#3B6D11">0</text>
+  <line x1="450" y1="341" x2="458" y2="341" stroke="#2C2C2A" stroke-width="1.5" marker-end="url(#arr)"/>
+  <rect x="458" y="328" width="30" height="26" rx="6" fill="#EEFFF3" stroke="#3B6D11" stroke-width="1"/>
+  <text x="473" y="346" text-anchor="middle" font-size="13" fill="#3B6D11">7</text>
+  <text x="390" y="345" font-size="10" fill="#888780">dummy→</text>
+
+  <text x="90" y="356" text-anchor="middle" font-size="10" fill="#888780">s1: [7,2]</text>
+  <text x="220" y="356" text-anchor="middle" font-size="10" fill="#888780">s2: [5]</text>
+  <text x="380" y="362" font-size="10" fill="#EF9F27">carry = 1 !</text>
+
+  <!-- ===== FRAME 4: Iter 3 (hundreds) ===== -->
+  <circle cx="20" cy="402" r="12" fill="#2C2C2A"/>
+  <text x="20" y="407" text-anchor="middle" font-size="11" fill="#FFFFFF">4</text>
+  <text x="50" y="402" font-size="12" font-weight="500" fill="#2C2C2A">Iter 3 — hundreds: pop 2 + pop 5 + carry 1 = 8, carry=0</text>
+  <rect x="10" y="414" width="660" height="80" rx="6" fill="#F8F8F6" stroke="#E0E0E0" stroke-width="0.5"/>
+
+  <text x="90" y="432" text-anchor="middle" font-size="11" fill="#3B8BD4">s1: pop 2</text>
+  <text x="220" y="432" text-anchor="middle" font-size="11" fill="#888780">s2: pop 5</text>
+  <text x="380" y="432" font-size="11" fill="#EF9F27">2 + 5 + 1 = 8, carry=0</text>
+  <text x="380" y="448" font-size="11" fill="#2C2C2A">prepend node(8)</text>
+  <!-- result list -->
+  <rect x="416" y="438" width="30" height="26" rx="6" fill="#EEFFF3" stroke="#3B6D11" stroke-width="1"/>
+  <text x="431" y="456" text-anchor="middle" font-size="13" fill="#3B6D11">8</text>
+  <line x1="446" y1="451" x2="454" y2="451" stroke="#2C2C2A" stroke-width="1.5" marker-end="url(#arr)"/>
+  <rect x="454" y="438" width="30" height="26" rx="6" fill="#EEFFF3" stroke="#3B6D11" stroke-width="1"/>
+  <text x="469" y="456" text-anchor="middle" font-size="13" fill="#3B6D11">0</text>
+  <line x1="484" y1="451" x2="492" y2="451" stroke="#2C2C2A" stroke-width="1.5" marker-end="url(#arr)"/>
+  <rect x="492" y="438" width="30" height="26" rx="6" fill="#EEFFF3" stroke="#3B6D11" stroke-width="1"/>
+  <text x="507" y="456" text-anchor="middle" font-size="13" fill="#3B6D11">7</text>
+  <text x="390" y="455" font-size="10" fill="#888780">dummy→</text>
+
+  <text x="90" y="466" text-anchor="middle" font-size="10" fill="#888780">s1: [7]</text>
+  <text x="220" y="466" text-anchor="middle" font-size="10" fill="#888780">s2: []</text>
+  <text x="380" y="472" font-size="10" fill="#2C2C2A">carry = 0</text>
+
+  <!-- ===== FRAME 5: Iter 4 (thousands) ===== -->
+  <circle cx="20" cy="512" r="12" fill="#2C2C2A"/>
+  <text x="20" y="517" text-anchor="middle" font-size="11" fill="#FFFFFF">5</text>
+  <text x="50" y="512" font-size="12" font-weight="500" fill="#2C2C2A">Iter 4 — thousands: pop 7 + s2 empty(0) + carry 0 = 7</text>
+  <rect x="10" y="524" width="660" height="80" rx="6" fill="#F8F8F6" stroke="#E0E0E0" stroke-width="0.5"/>
+
+  <text x="90" y="542" text-anchor="middle" font-size="11" fill="#3B8BD4">s1: pop 7</text>
+  <text x="220" y="542" text-anchor="middle" font-size="11" fill="#888780">s2: empty → 0</text>
+  <text x="380" y="542" font-size="11" fill="#EF9F27">7 + 0 + 0 = 7, carry=0</text>
+  <text x="380" y="558" font-size="11" fill="#2C2C2A">prepend node(7)</text>
+  <!-- result list -->
+  <rect x="384" y="548" width="30" height="26" rx="6" fill="#EEFFF3" stroke="#3B6D11" stroke-width="1"/>
+  <text x="399" y="566" text-anchor="middle" font-size="13" fill="#3B6D11">7</text>
+  <line x1="414" y1="561" x2="422" y2="561" stroke="#2C2C2A" stroke-width="1.5" marker-end="url(#arr)"/>
+  <rect x="422" y="548" width="30" height="26" rx="6" fill="#EEFFF3" stroke="#3B6D11" stroke-width="1"/>
+  <text x="437" y="566" text-anchor="middle" font-size="13" fill="#3B6D11">8</text>
+  <line x1="452" y1="561" x2="460" y2="561" stroke="#2C2C2A" stroke-width="1.5" marker-end="url(#arr)"/>
+  <rect x="460" y="548" width="30" height="26" rx="6" fill="#EEFFF3" stroke="#3B6D11" stroke-width="1"/>
+  <text x="475" y="566" text-anchor="middle" font-size="13" fill="#3B6D11">0</text>
+  <line x1="490" y1="561" x2="498" y2="561" stroke="#2C2C2A" stroke-width="1.5" marker-end="url(#arr)"/>
+  <rect x="498" y="548" width="30" height="26" rx="6" fill="#EEFFF3" stroke="#3B6D11" stroke-width="1"/>
+  <text x="513" y="566" text-anchor="middle" font-size="13" fill="#3B6D11">7</text>
+  <text x="358" y="565" font-size="10" fill="#888780">dummy→</text>
+
+  <text x="90" y="576" text-anchor="middle" font-size="10" fill="#888780">s1: []</text>
+  <text x="220" y="576" text-anchor="middle" font-size="10" fill="#888780">s2: []</text>
+  <text x="380" y="582" font-size="10" fill="#2C2C2A">carry = 0</text>
+
+  <!-- ===== FRAME 6: Result ===== -->
+  <circle cx="20" cy="622" r="12" fill="#3B6D11"/>
+  <text x="20" y="627" text-anchor="middle" font-size="11" fill="#FFFFFF">6</text>
+  <text x="50" y="622" font-size="12" font-weight="500" fill="#2C2C2A">Exit — s1=[], s2=[], carry=0 → return dummy.next</text>
+  <rect x="10" y="634" width="660" height="42" rx="6" fill="#EEFFF3" stroke="#3B6D11" stroke-width="1"/>
+  <text x="340" y="652" text-anchor="middle" font-size="12" fill="#3B6D11">Result: 7 → 8 → 0 → 7  ✓   (7243 + 564 = 7807)</text>
+  <text x="340" y="668" text-anchor="middle" font-size="11" fill="#888780">Prepend builds forward order automatically — no second reversal needed</text>
+</svg>
