@@ -1,0 +1,190 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="680" height="600" font-family="Arial,sans-serif">
+  <defs>
+    <marker id="arr" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0,8 3,0 6" fill="#2C2C2A"/>
+    </marker>
+    <marker id="arr-blue" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0,8 3,0 6" fill="#3B8BD4"/>
+    </marker>
+    <marker id="arr-red" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0,8 3,0 6" fill="#E24B4A"/>
+    </marker>
+    <marker id="arr-green" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0,8 3,0 6" fill="#3B6D11"/>
+    </marker>
+  </defs>
+
+  <rect width="680" height="600" fill="#FFFFFF"/>
+
+  <!-- Title -->
+  <text x="340" y="26" text-anchor="middle" font-size="15" font-weight="600" fill="#2C2C2A">Design Browser History (#1472) — Cursor Walkthrough</text>
+  <text x="340" y="44" text-anchor="middle" font-size="11" fill="#888780">init → visit×2 → back×2 → forward×1 → visit(youtube) → forward(2) → back(2) → back(7)</text>
+
+  <!-- Legend strip -->
+  <rect x="20" y="50" width="640" height="26" rx="6" fill="#F8F8F6" stroke="#E0E0D8" stroke-width="1"/>
+  <rect x="30" y="57" width="12" height="12" rx="2" fill="#3B8BD4"/>
+  <text x="48" y="68" font-size="10" fill="#2C2C2A">cursor (current page)</text>
+  <rect x="170" y="57" width="12" height="12" rx="2" fill="#FFFFFF" stroke="#2C2C2A" stroke-width="1"/>
+  <text x="188" y="68" font-size="10" fill="#2C2C2A">history node</text>
+  <rect x="290" y="57" width="12" height="12" rx="2" fill="#F8F0F0" stroke="#E24B4A" stroke-width="1" stroke-dasharray="3,2"/>
+  <text x="308" y="68" font-size="10" fill="#E24B4A">severed / GC'd</text>
+  <text x="420" y="68" font-size="10" fill="#888780">▲ = cursor arrow  |  ⟷ = bidirectional DLL link</text>
+
+  <!-- ══ Row 1: init + two visits ══ -->
+
+  <!-- Step 0: init("leetcode.com") -->
+  <circle cx="24" cy="107" r="10" fill="#2C2C2A"/>
+  <text x="24" y="111" text-anchor="middle" font-size="10" font-weight="600" fill="#FFFFFF">0</text>
+  <text x="40" y="105" font-size="11" font-weight="600" fill="#2C2C2A">init("leetcode.com")</text>
+  <text x="40" y="119" font-size="10" fill="#888780">cursor = Node("leetcode")</text>
+
+  <rect x="200" y="92" width="90" height="30" rx="8" fill="#3B8BD4" stroke="#2C2C2A" stroke-width="1"/>
+  <text x="245" y="112" text-anchor="middle" font-size="11" font-weight="600" fill="#FFFFFF">leetcode</text>
+  <!-- cursor arrow -->
+  <path d="M245,88 L245,92" stroke="#3B8BD4" stroke-width="2" fill="none" marker-end="url(#arr-blue)"/>
+  <text x="245" y="86" text-anchor="middle" font-size="9" fill="#3B8BD4">cursor</text>
+  <text x="310" y="107" font-size="10" fill="#888780">prev=None  next=None</text>
+
+  <line x1="20" y1="134" x2="660" y2="134" stroke="#F1EFE8" stroke-width="1"/>
+
+  <!-- Step 1: visit("google.com") -->
+  <circle cx="24" cy="150" r="10" fill="#3B8BD4"/>
+  <text x="24" y="154" text-anchor="middle" font-size="10" font-weight="600" fill="#FFFFFF">1</text>
+  <text x="40" y="148" font-size="11" font-weight="600" fill="#2C2C2A">visit("google.com")</text>
+  <text x="40" y="162" font-size="10" fill="#888780">cursor.next = node(google), node.prev = cursor, cursor = node(google)</text>
+
+  <rect x="120" y="136" width="80" height="30" rx="8" fill="#FFFFFF" stroke="#2C2C2A" stroke-width="1"/>
+  <text x="160" y="156" text-anchor="middle" font-size="11" fill="#2C2C2A">leetcode</text>
+  <path d="M201,150 L234,150" stroke="#2C2C2A" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>
+  <path d="M234,158 L201,158" stroke="#2C2C2A" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>
+  <rect x="236" y="136" width="80" height="30" rx="8" fill="#3B8BD4" stroke="#2C2C2A" stroke-width="1"/>
+  <text x="276" y="156" text-anchor="middle" font-size="11" font-weight="600" fill="#FFFFFF">google</text>
+  <path d="M276,132 L276,136" stroke="#3B8BD4" stroke-width="2" fill="none" marker-end="url(#arr-blue)"/>
+  <text x="276" y="130" text-anchor="middle" font-size="9" fill="#3B8BD4">cursor</text>
+  <text x="340" y="148" font-size="10" fill="#888780">google.next=None (no forward history)</text>
+
+  <line x1="20" y1="178" x2="660" y2="178" stroke="#F1EFE8" stroke-width="1"/>
+
+  <!-- Step 2: visit("facebook.com") -->
+  <circle cx="24" cy="194" r="10" fill="#3B8BD4"/>
+  <text x="24" y="198" text-anchor="middle" font-size="10" font-weight="600" fill="#FFFFFF">2</text>
+  <text x="40" y="192" font-size="11" font-weight="600" fill="#2C2C2A">visit("facebook.com")</text>
+  <text x="40" y="206" font-size="10" fill="#888780">google.next = node(facebook), facebook.prev = google, cursor = facebook</text>
+
+  <rect x="80" y="180" width="72" height="30" rx="8" fill="#FFFFFF" stroke="#2C2C2A" stroke-width="1"/>
+  <text x="116" y="200" text-anchor="middle" font-size="11" fill="#2C2C2A">leetcode</text>
+  <path d="M153,193 L182,193" stroke="#2C2C2A" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>
+  <path d="M182,201 L153,201" stroke="#2C2C2A" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>
+  <rect x="184" y="180" width="72" height="30" rx="8" fill="#FFFFFF" stroke="#2C2C2A" stroke-width="1"/>
+  <text x="220" y="200" text-anchor="middle" font-size="11" fill="#2C2C2A">google</text>
+  <path d="M257,193 L286,193" stroke="#2C2C2A" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>
+  <path d="M286,201 L257,201" stroke="#2C2C2A" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>
+  <rect x="288" y="180" width="72" height="30" rx="8" fill="#3B8BD4" stroke="#2C2C2A" stroke-width="1"/>
+  <text x="324" y="200" text-anchor="middle" font-size="11" font-weight="600" fill="#FFFFFF">facebook</text>
+  <path d="M324" d="M324,176 L324,180" stroke="#3B8BD4" stroke-width="2" fill="none" marker-end="url(#arr-blue)"/>
+  <text x="324" y="174" text-anchor="middle" font-size="9" fill="#3B8BD4">cursor</text>
+  <text x="380" y="193" font-size="10" fill="#888780">facebook.next=None</text>
+
+  <line x1="20" y1="222" x2="660" y2="222" stroke="#F1EFE8" stroke-width="1"/>
+
+  <!-- Step 3-4: back(1) back(1) -->
+  <circle cx="24" cy="246" r="10" fill="#EF9F27"/>
+  <text x="24" y="250" text-anchor="middle" font-size="10" font-weight="600" fill="#FFFFFF">3</text>
+  <text x="40" y="244" font-size="11" font-weight="600" fill="#2C2C2A">back(1) → "google.com"  |  back(1) → "leetcode.com"</text>
+  <text x="40" y="258" font-size="10" fill="#888780">cursor walks prev: facebook → google (return "google.com") → leetcode (return "leetcode.com")</text>
+
+  <rect x="80" y="266" width="72" height="30" rx="8" fill="#3B8BD4" stroke="#2C2C2A" stroke-width="1"/>
+  <text x="116" y="286" text-anchor="middle" font-size="11" font-weight="600" fill="#FFFFFF">leetcode</text>
+  <path d="M116,262 L116,266" stroke="#3B8BD4" stroke-width="2" fill="none" marker-end="url(#arr-blue)"/>
+  <text x="116" y="260" text-anchor="middle" font-size="9" fill="#3B8BD4">cursor</text>
+  <path d="M153,279 L182,279" stroke="#2C2C2A" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>
+  <path d="M182,287 L153,287" stroke="#2C2C2A" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>
+  <rect x="184" y="266" width="72" height="30" rx="8" fill="#888780" stroke="#2C2C2A" stroke-width="1"/>
+  <text x="220" y="286" text-anchor="middle" font-size="11" fill="#FFFFFF">google</text>
+  <path d="M257,279 L286,279" stroke="#2C2C2A" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>
+  <path d="M286,287 L257,287" stroke="#2C2C2A" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>
+  <rect x="288" y="266" width="72" height="30" rx="8" fill="#888780" stroke="#2C2C2A" stroke-width="1"/>
+  <text x="324" y="286" text-anchor="middle" font-size="11" fill="#FFFFFF">facebook</text>
+  <!-- back arrows -->
+  <path d="M288,271 Q220,256 188,271" stroke="#EF9F27" stroke-width="1.5" fill="none" marker-end="url(#arr-blue)" stroke-dasharray="3,2"/>
+  <path d="M184,271 Q116,256 120,271" stroke="#EF9F27" stroke-width="1.5" fill="none" marker-end="url(#arr-blue)" stroke-dasharray="3,2"/>
+  <text x="450" y="280" font-size="10" fill="#888780">cursor.prev until steps=0</text>
+  <text x="450" y="294" font-size="10" fill="#888780">or cursor.prev is None</text>
+
+  <line x1="20" y1="308" x2="660" y2="308" stroke="#F1EFE8" stroke-width="1"/>
+
+  <!-- Step 5: forward(1) -->
+  <circle cx="24" cy="328" r="10" fill="#EF9F27"/>
+  <text x="24" y="332" text-anchor="middle" font-size="10" font-weight="600" fill="#FFFFFF">5</text>
+  <text x="40" y="326" font-size="11" font-weight="600" fill="#2C2C2A">forward(1) → "google.com"</text>
+  <text x="40" y="340" font-size="10" fill="#888780">cursor = cursor.next → google</text>
+
+  <rect x="80" y="350" width="72" height="30" rx="8" fill="#888780" stroke="#2C2C2A" stroke-width="1"/>
+  <text x="116" y="370" text-anchor="middle" font-size="11" fill="#FFFFFF">leetcode</text>
+  <path d="M153,364 L182,364" stroke="#2C2C2A" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>
+  <path d="M182,372 L153,372" stroke="#2C2C2A" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>
+  <rect x="184" y="350" width="72" height="30" rx="8" fill="#3B8BD4" stroke="#2C2C2A" stroke-width="1"/>
+  <text x="220" y="370" text-anchor="middle" font-size="11" font-weight="600" fill="#FFFFFF">google</text>
+  <path d="M220,346 L220,350" stroke="#3B8BD4" stroke-width="2" fill="none" marker-end="url(#arr-blue)"/>
+  <text x="220" y="344" text-anchor="middle" font-size="9" fill="#3B8BD4">cursor</text>
+  <path d="M257,364 L286,364" stroke="#2C2C2A" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>
+  <path d="M286,372 L257,372" stroke="#2C2C2A" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>
+  <rect x="288" y="350" width="72" height="30" rx="8" fill="#888780" stroke="#2C2C2A" stroke-width="1"/>
+  <text x="324" y="370" text-anchor="middle" font-size="11" fill="#FFFFFF">facebook</text>
+  <text x="400" y="364" font-size="10" fill="#3B6D11">→ "google.com"</text>
+
+  <line x1="20" y1="396" x2="660" y2="396" stroke="#F1EFE8" stroke-width="1"/>
+
+  <!-- Step 6: visit("youtube.com") — KEY STEP: truncation -->
+  <circle cx="24" cy="415" r="10" fill="#E24B4A"/>
+  <text x="24" y="419" text-anchor="middle" font-size="10" font-weight="600" fill="#FFFFFF">6</text>
+  <text x="40" y="413" font-size="11" font-weight="600" fill="#2C2C2A">visit("youtube.com") — TRUNCATES forward history</text>
+  <text x="40" y="427" font-size="10" fill="#888780">google.next = node(youtube)  — facebook unreachable → GC'd.  cursor = youtube</text>
+
+  <rect x="60" y="436" width="72" height="30" rx="8" fill="#888780" stroke="#2C2C2A" stroke-width="1"/>
+  <text x="96" y="456" text-anchor="middle" font-size="11" fill="#FFFFFF">leetcode</text>
+  <path d="M133,450 L162,450" stroke="#2C2C2A" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>
+  <path d="M162,458 L133,458" stroke="#2C2C2A" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>
+  <rect x="164" y="436" width="72" height="30" rx="8" fill="#888780" stroke="#2C2C2A" stroke-width="1"/>
+  <text x="200" y="456" text-anchor="middle" font-size="11" fill="#FFFFFF">google</text>
+  <path d="M237,450 L266,450" stroke="#2C2C2A" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>
+  <path d="M266,458 L237,458" stroke="#2C2C2A" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>
+  <rect x="268" y="436" width="72" height="30" rx="8" fill="#3B8BD4" stroke="#2C2C2A" stroke-width="1"/>
+  <text x="304" y="456" text-anchor="middle" font-size="11" font-weight="600" fill="#FFFFFF">youtube</text>
+  <path d="M304,432 L304,436" stroke="#3B8BD4" stroke-width="2" fill="none" marker-end="url(#arr-blue)"/>
+  <text x="304" y="430" text-anchor="middle" font-size="9" fill="#3B8BD4">cursor</text>
+  <!-- facebook (severed) -->
+  <rect x="380" y="436" width="72" height="30" rx="8" fill="#F8F0F0" stroke="#E24B4A" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="416" y="451" text-anchor="middle" font-size="11" fill="#E24B4A">facebook</text>
+  <text x="416" y="463" text-anchor="middle" font-size="8" fill="#E24B4A">GC'd</text>
+  <!-- Severed line -->
+  <line x1="341" y1="451" x2="379" y2="451" stroke="#E24B4A" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="360" y="444" text-anchor="middle" font-size="9" fill="#E24B4A">✂</text>
+  <text x="480" y="448" font-size="10" fill="#888780">youtube.next=None by</text>
+  <text x="480" y="461" font-size="10" fill="#888780">default — free truncation</text>
+
+  <line x1="20" y1="480" x2="660" y2="480" stroke="#F1EFE8" stroke-width="1"/>
+
+  <!-- Step 7-9: forward(2), back(2), back(7) -->
+  <circle cx="24" cy="498" r="10" fill="#3B6D11"/>
+  <text x="24" y="502" text-anchor="middle" font-size="10" font-weight="600" fill="#FFFFFF">7</text>
+  <text x="40" y="496" font-size="11" font-weight="600" fill="#2C2C2A">forward(2) → "youtube.com"  |  back(2) → "leetcode.com"  |  back(7) → "leetcode.com"</text>
+
+  <rect x="60" y="512" width="72" height="30" rx="8" fill="#3B8BD4" stroke="#2C2C2A" stroke-width="1"/>
+  <text x="96" y="532" text-anchor="middle" font-size="11" font-weight="600" fill="#FFFFFF">leetcode</text>
+  <path x="96" d="M96,508 L96,512" stroke="#3B8BD4" stroke-width="2" fill="none" marker-end="url(#arr-blue)"/>
+  <text x="96" y="506" text-anchor="middle" font-size="9" fill="#3B8BD4">cursor</text>
+  <path d="M133,525 L162,525" stroke="#2C2C2A" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>
+  <path d="M162,533 L133,533" stroke="#2C2C2A" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>
+  <rect x="164" y="512" width="72" height="30" rx="8" fill="#888780" stroke="#2C2C2A" stroke-width="1"/>
+  <text x="200" y="532" text-anchor="middle" font-size="11" fill="#FFFFFF">google</text>
+  <path d="M237,525 L266,525" stroke="#2C2C2A" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>
+  <path d="M266,533 L237,533" stroke="#2C2C2A" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>
+  <rect x="268" y="512" width="72" height="30" rx="8" fill="#888780" stroke="#2C2C2A" stroke-width="1"/>
+  <text x="304" y="532" text-anchor="middle" font-size="11" fill="#FFFFFF">youtube</text>
+
+  <rect x="360" y="512" width="300" height="52" rx="6" fill="#F8F8F6" stroke="#E0E0D8" stroke-width="1"/>
+  <text x="376" y="530" font-size="10" fill="#2C2C2A">forward(2): youtube.next=None → 0 moves → "youtube.com"</text>
+  <text x="376" y="546" font-size="10" fill="#2C2C2A">back(2): youtube→google→leetcode → "leetcode.com"</text>
+  <text x="376" y="562" font-size="10" fill="#3B6D11">back(7): cursor.prev=None (homepage) → stay → "leetcode.com"</text>
+</svg>

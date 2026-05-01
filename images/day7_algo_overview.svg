@@ -1,0 +1,161 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="680" height="500" font-family="Arial,sans-serif">
+  <defs>
+    <marker id="arr" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0,8 3,0 6" fill="#2C2C2A"/>
+    </marker>
+    <marker id="arr-blue" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0,8 3,0 6" fill="#3B8BD4"/>
+    </marker>
+    <marker id="arr-red" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0,8 3,0 6" fill="#E24B4A"/>
+    </marker>
+  </defs>
+
+  <rect width="680" height="500" fill="#FFFFFF"/>
+
+  <!-- Title -->
+  <text x="340" y="28" text-anchor="middle" font-size="15" font-weight="600" fill="#2C2C2A">Doubly Linked List — Structure &amp; Four-Pointer Insert</text>
+
+  <!-- ══ SECTION 1: DLL STRUCTURE ══ -->
+  <text x="20" y="54" font-size="11" font-weight="600" fill="#888780">① DLL Structure — Sentinel Nodes Never Hold Data</text>
+
+  <!-- H sentinel -->
+  <rect x="20" y="62" width="72" height="38" rx="8" fill="#F1EFE8" stroke="#2C2C2A" stroke-width="1"/>
+  <text x="56" y="84" text-anchor="middle" font-size="13" font-weight="600" fill="#2C2C2A">H</text>
+  <text x="56" y="98" text-anchor="middle" font-size="9" fill="#888780">sentinel</text>
+
+  <!-- H ↔ 1 -->
+  <path d="M93,75 L130,75" stroke="#2C2C2A" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>
+  <path d="M130,85 L93,85" stroke="#2C2C2A" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>
+
+  <!-- Node 1 -->
+  <rect x="132" y="62" width="72" height="38" rx="8" fill="#FFFFFF" stroke="#2C2C2A" stroke-width="1"/>
+  <text x="168" y="86" text-anchor="middle" font-size="14" fill="#2C2C2A">1</text>
+
+  <!-- 1 ↔ 2 -->
+  <path d="M205,75 L242,75" stroke="#2C2C2A" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>
+  <path d="M242,85 L205,85" stroke="#2C2C2A" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>
+
+  <!-- Node 2 -->
+  <rect x="244" y="62" width="72" height="38" rx="8" fill="#FFFFFF" stroke="#2C2C2A" stroke-width="1"/>
+  <text x="280" y="86" text-anchor="middle" font-size="14" fill="#2C2C2A">2</text>
+
+  <!-- 2 ↔ 3 -->
+  <path d="M317,75 L354,75" stroke="#2C2C2A" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>
+  <path d="M354,85 L317,85" stroke="#2C2C2A" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>
+
+  <!-- Node 3 -->
+  <rect x="356" y="62" width="72" height="38" rx="8" fill="#FFFFFF" stroke="#2C2C2A" stroke-width="1"/>
+  <text x="392" y="86" text-anchor="middle" font-size="14" fill="#2C2C2A">3</text>
+
+  <!-- 3 ↔ T -->
+  <path d="M429,75 L466,75" stroke="#2C2C2A" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>
+  <path d="M466,85 L429,85" stroke="#2C2C2A" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>
+
+  <!-- T sentinel -->
+  <rect x="468" y="62" width="72" height="38" rx="8" fill="#F1EFE8" stroke="#2C2C2A" stroke-width="1"/>
+  <text x="504" y="84" text-anchor="middle" font-size="13" font-weight="600" fill="#2C2C2A">T</text>
+  <text x="504" y="98" text-anchor="middle" font-size="9" fill="#888780">sentinel</text>
+
+  <!-- Invariant box -->
+  <rect x="560" y="62" width="108" height="52" rx="6" fill="#F8F8F6" stroke="#E0E0D8" stroke-width="1"/>
+  <text x="614" y="78" text-anchor="middle" font-size="10" fill="#888780">Invariant:</text>
+  <text x="614" y="93" text-anchor="middle" font-size="10" fill="#2C2C2A">n.prev.next = n</text>
+  <text x="614" y="108" text-anchor="middle" font-size="10" fill="#2C2C2A">n.next.prev = n</text>
+
+  <!-- Divider -->
+  <line x1="20" y1="125" x2="660" y2="125" stroke="#E0E0D8" stroke-width="1"/>
+
+  <!-- ══ SECTION 2: FOUR-POINTER INSERT ══ -->
+  <text x="20" y="145" font-size="11" font-weight="600" fill="#888780">② Four-Pointer Insert: _insert_after(pred=node(1), val=NEW)</text>
+
+  <!-- BEFORE label -->
+  <text x="30" y="170" font-size="11" fill="#888780">BEFORE</text>
+
+  <!-- pred node (before) -->
+  <rect x="30" y="178" width="90" height="38" rx="8" fill="#FFFFFF" stroke="#2C2C2A" stroke-width="1"/>
+  <text x="75" y="202" text-anchor="middle" font-size="12" fill="#2C2C2A">1 (pred)</text>
+
+  <!-- dashed arrow pred→succ (old link, to be replaced) -->
+  <path d="M121,192 L174,192" stroke="#888780" stroke-width="1.5" stroke-dasharray="5,3" fill="none" marker-end="url(#arr)"/>
+  <text x="148" y="185" text-anchor="middle" font-size="9" fill="#888780">old link</text>
+
+  <!-- succ node (before) -->
+  <rect x="176" y="178" width="90" height="38" rx="8" fill="#FFFFFF" stroke="#2C2C2A" stroke-width="1"/>
+  <text x="221" y="202" text-anchor="middle" font-size="12" fill="#2C2C2A">2 (succ)</text>
+
+  <!-- dashed backward arrow succ→pred -->
+  <path d="M176,205 L121,205" stroke="#888780" stroke-width="1.5" stroke-dasharray="5,3" fill="none" marker-end="url(#arr)"/>
+
+  <!-- AFTER label -->
+  <text x="320" y="170" font-size="11" fill="#888780">AFTER — 4 updates (both directions)</text>
+
+  <!-- pred node (after) -->
+  <rect x="320" y="178" width="80" height="38" rx="8" fill="#FFFFFF" stroke="#2C2C2A" stroke-width="1"/>
+  <text x="360" y="202" text-anchor="middle" font-size="13" fill="#2C2C2A">1</text>
+
+  <!-- NEW node (after) -->
+  <rect x="440" y="178" width="80" height="38" rx="8" fill="#3B8BD4" stroke="#2C2C2A" stroke-width="1"/>
+  <text x="480" y="202" text-anchor="middle" font-size="13" font-weight="600" fill="#FFFFFF">NEW</text>
+
+  <!-- succ node (after) -->
+  <rect x="560" y="178" width="80" height="38" rx="8" fill="#FFFFFF" stroke="#2C2C2A" stroke-width="1"/>
+  <text x="600" y="202" text-anchor="middle" font-size="13" fill="#2C2C2A">2</text>
+
+  <!-- ① pred.next = node -->
+  <path d="M401,188 L438,188" stroke="#3B8BD4" stroke-width="2" fill="none" marker-end="url(#arr-blue)"/>
+  <text x="420" y="183" text-anchor="middle" font-size="10" font-weight="600" fill="#3B8BD4">①</text>
+
+  <!-- ② node.prev = pred -->
+  <path d="M440,202 L403,202" stroke="#3B8BD4" stroke-width="2" fill="none" marker-end="url(#arr-blue)"/>
+  <text x="420" y="216" text-anchor="middle" font-size="10" font-weight="600" fill="#3B8BD4">②</text>
+
+  <!-- ③ node.next = succ -->
+  <path d="M521,188 L558,188" stroke="#3B8BD4" stroke-width="2" fill="none" marker-end="url(#arr-blue)"/>
+  <text x="540" y="183" text-anchor="middle" font-size="10" font-weight="600" fill="#3B8BD4">③</text>
+
+  <!-- ④ succ.prev = node -->
+  <path d="M560,202 L523,202" stroke="#3B8BD4" stroke-width="2" fill="none" marker-end="url(#arr-blue)"/>
+  <text x="541" y="216" text-anchor="middle" font-size="10" font-weight="600" fill="#3B8BD4">④</text>
+
+  <!-- Code box for 4 pointers -->
+  <rect x="20" y="240" width="640" height="76" rx="8" fill="#F8F8F6" stroke="#E0E0D8" stroke-width="1"/>
+  <text x="36" y="260" font-size="12" font-weight="600" fill="#2C2C2A">Code:</text>
+  <text x="36" y="278" font-size="11" font-family="Courier New,monospace" fill="#3B8BD4">pred.next = node    # ①</text>
+  <text x="240" y="278" font-size="11" font-family="Courier New,monospace" fill="#3B8BD4">node.next = succ    # ③</text>
+  <text x="36" y="296" font-size="11" font-family="Courier New,monospace" fill="#3B8BD4">node.prev = pred    # ②</text>
+  <text x="240" y="296" font-size="11" font-family="Courier New,monospace" fill="#3B8BD4">succ.prev = node    # ④</text>
+  <text x="480" y="278" font-size="11" fill="#888780">Miss any one →</text>
+  <text x="480" y="296" font-size="11" fill="#888780">silent corruption</text>
+
+  <!-- Divider -->
+  <line x1="20" y1="333" x2="660" y2="333" stroke="#E0E0D8" stroke-width="1"/>
+
+  <!-- ══ SECTION 3: TWO-POINTER DELETE ══ -->
+  <text x="20" y="353" font-size="11" font-weight="600" fill="#888780">③ Two-Pointer Delete: _remove(node=node(2))</text>
+
+  <!-- pred node -->
+  <rect x="80" y="362" width="72" height="38" rx="8" fill="#FFFFFF" stroke="#2C2C2A" stroke-width="1"/>
+  <text x="116" y="386" text-anchor="middle" font-size="13" fill="#2C2C2A">1</text>
+
+  <!-- node to delete -->
+  <rect x="210" y="362" width="72" height="38" rx="8" fill="#E24B4A" stroke="#2C2C2A" stroke-width="1"/>
+  <text x="246" y="381" text-anchor="middle" font-size="13" font-weight="600" fill="#FFFFFF">2</text>
+  <text x="246" y="396" text-anchor="middle" font-size="9" fill="#FFFFFF">DELETE</text>
+
+  <!-- succ node -->
+  <rect x="340" y="362" width="72" height="38" rx="8" fill="#FFFFFF" stroke="#2C2C2A" stroke-width="1"/>
+  <text x="376" y="386" text-anchor="middle" font-size="13" fill="#2C2C2A">3</text>
+
+  <!-- Skip-over arrow (1 → 3) -->
+  <path d="M152,358 Q246,338 338,358" stroke="#3B6D11" stroke-width="2" fill="none" marker-end="url(#arr-blue)" stroke-dasharray="0"/>
+  <text x="246" y="335" text-anchor="middle" font-size="10" font-weight="600" fill="#3B6D11">node.prev.next = node.next</text>
+
+  <!-- Skip-over backward arrow (3 → 1) -->
+  <path d="M340,410 Q246,428 154,410" stroke="#3B6D11" stroke-width="2" fill="none" marker-end="url(#arr-blue)"/>
+  <text x="246" y="445" text-anchor="middle" font-size="10" font-weight="600" fill="#3B6D11">node.next.prev = node.prev</text>
+
+  <text x="460" y="380" font-size="11" fill="#888780">O(1) — node.prev</text>
+  <text x="460" y="396" font-size="11" fill="#888780">instantly available</text>
+  <text x="460" y="412" font-size="11" fill="#888780">No scan from head</text>
+</svg>
