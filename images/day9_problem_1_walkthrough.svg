@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="580" viewBox="0 0 860 580">
+  <rect width="860" height="580" fill="#0f172a"/>
+
+  <!-- Title -->
+  <text x="430" y="35" font-family="monospace" font-size="17" fill="#e2e8f0" text-anchor="middle" font-weight="bold">LC 224 — Basic Calculator Walkthrough</text>
+  <text x="430" y="56" font-family="monospace" font-size="13" fill="#f59e0b" text-anchor="middle">Input: "3 + (2 - (1 + 1))"   Expected: 3</text>
+
+  <!-- Column headers -->
+  <rect x="10" y="68" width="840" height="26" rx="4" fill="#1e293b"/>
+  <text x="55"  y="85" font-family="monospace" font-size="12" fill="#60a5fa" text-anchor="middle">char</text>
+  <text x="170" y="85" font-family="monospace" font-size="12" fill="#60a5fa" text-anchor="middle">action</text>
+  <text x="370" y="85" font-family="monospace" font-size="12" fill="#60a5fa" text-anchor="middle">stack</text>
+  <text x="570" y="85" font-family="monospace" font-size="12" fill="#60a5fa" text-anchor="middle">result</text>
+  <text x="670" y="85" font-family="monospace" font-size="12" fill="#60a5fa" text-anchor="middle">sign</text>
+  <text x="780" y="85" font-family="monospace" font-size="12" fill="#60a5fa" text-anchor="middle">num</text>
+
+  <!-- Row data -->
+  <!-- Row colors: alternate #0f172a / #111827 -->
+  <!-- Helper: y = 100 + rowIndex * 42 -->
+
+  <!-- Row 0: '3' -->
+  <rect x="10" y="96" width="840" height="38" rx="3" fill="#111827"/>
+  <text x="55"  y="119" font-family="monospace" font-size="13" fill="#e2e8f0" text-anchor="middle" font-weight="bold">'3'</text>
+  <text x="170" y="119" font-family="monospace" font-size="12" fill="#cbd5e1" text-anchor="middle">accumulate digit</text>
+  <text x="370" y="119" font-family="monospace" font-size="12" fill="#94a3b8" text-anchor="middle">[ ]</text>
+  <text x="570" y="119" font-family="monospace" font-size="12" fill="#94a3b8" text-anchor="middle">0</text>
+  <text x="670" y="119" font-family="monospace" font-size="12" fill="#94a3b8" text-anchor="middle">+1</text>
+  <text x="780" y="119" font-family="monospace" font-size="13" fill="#fbbf24" text-anchor="middle">3</text>
+
+  <!-- Row 1: '+' -->
+  <rect x="10" y="136" width="840" height="38" rx="3" fill="#0f172a"/>
+  <text x="55"  y="159" font-family="monospace" font-size="13" fill="#e2e8f0" text-anchor="middle" font-weight="bold">'+'</text>
+  <text x="170" y="159" font-family="monospace" font-size="12" fill="#cbd5e1" text-anchor="middle">result+=+1*3; sign=+1</text>
+  <text x="370" y="159" font-family="monospace" font-size="12" fill="#94a3b8" text-anchor="middle">[ ]</text>
+  <text x="570" y="159" font-family="monospace" font-size="13" fill="#fbbf24" text-anchor="middle">3</text>
+  <text x="670" y="159" font-family="monospace" font-size="12" fill="#4ade80" text-anchor="middle">+1</text>
+  <text x="780" y="159" font-family="monospace" font-size="12" fill="#94a3b8" text-anchor="middle">0</text>
+
+  <!-- Row 2: '(' green highlight -->
+  <rect x="10" y="176" width="840" height="38" rx="3" fill="#1c2e1c"/>
+  <text x="55"  y="199" font-family="monospace" font-size="13" fill="#4ade80" text-anchor="middle" font-weight="bold">'('</text>
+  <text x="170" y="199" font-family="monospace" font-size="12" fill="#cbd5e1" text-anchor="middle">push(3), push(+1); reset</text>
+  <text x="370" y="199" font-family="monospace" font-size="12" fill="#4ade80" text-anchor="middle">[ 3, +1 ]</text>
+  <text x="570" y="199" font-family="monospace" font-size="12" fill="#94a3b8" text-anchor="middle">0</text>
+  <text x="670" y="199" font-family="monospace" font-size="12" fill="#94a3b8" text-anchor="middle">+1</text>
+  <text x="780" y="199" font-family="monospace" font-size="12" fill="#94a3b8" text-anchor="middle">0</text>
+
+  <!-- Row 3: '2' -->
+  <rect x="10" y="216" width="840" height="38" rx="3" fill="#111827"/>
+  <text x="55"  y="239" font-family="monospace" font-size="13" fill="#e2e8f0" text-anchor="middle" font-weight="bold">'2'</text>
+  <text x="170" y="239" font-family="monospace" font-size="12" fill="#cbd5e1" text-anchor="middle">accumulate digit</text>
+  <text x="370" y="239" font-family="monospace" font-size="12" fill="#4ade80" text-anchor="middle">[ 3, +1 ]</text>
+  <text x="570" y="239" font-family="monospace" font-size="12" fill="#94a3b8" text-anchor="middle">0</text>
+  <text x="670" y="239" font-family="monospace" font-size="12" fill="#94a3b8" text-anchor="middle">+1</text>
+  <text x="780" y="239" font-family="monospace" font-size="13" fill="#fbbf24" text-anchor="middle">2</text>
+
+  <!-- Row 4: '-' -->
+  <rect x="10" y="256" width="840" height="38" rx="3" fill="#0f172a"/>
+  <text x="55"  y="279" font-family="monospace" font-size="13" fill="#e2e8f0" text-anchor="middle" font-weight="bold">'-'</text>
+  <text x="170" y="279" font-family="monospace" font-size="12" fill="#cbd5e1" text-anchor="middle">result+=+1*2; sign=-1</text>
+  <text x="370" y="279" font-family="monospace" font-size="12" fill="#4ade80" text-anchor="middle">[ 3, +1 ]</text>
+  <text x="570" y="279" font-family="monospace" font-size="13" fill="#fbbf24" text-anchor="middle">2</text>
+  <text x="670" y="279" font-family="monospace" font-size="13" fill="#f87171" text-anchor="middle">-1</text>
+  <text x="780" y="279" font-family="monospace" font-size="12" fill="#94a3b8" text-anchor="middle">0</text>
+
+  <!-- Row 5: '(' double-nested -->
+  <rect x="10" y="296" width="840" height="38" rx="3" fill="#1c2e1c"/>
+  <text x="55"  y="319" font-family="monospace" font-size="13" fill="#4ade80" text-anchor="middle" font-weight="bold">'('</text>
+  <text x="170" y="319" font-family="monospace" font-size="12" fill="#cbd5e1" text-anchor="middle">push(2), push(-1); reset</text>
+  <text x="370" y="319" font-family="monospace" font-size="12" fill="#4ade80" text-anchor="middle">[ 3,+1,2,-1 ]</text>
+  <text x="570" y="319" font-family="monospace" font-size="12" fill="#94a3b8" text-anchor="middle">0</text>
+  <text x="670" y="319" font-family="monospace" font-size="12" fill="#94a3b8" text-anchor="middle">+1</text>
+  <text x="780" y="319" font-family="monospace" font-size="12" fill="#94a3b8" text-anchor="middle">0</text>
+
+  <!-- Row 6: inner '1' -->
+  <rect x="10" y="336" width="840" height="38" rx="3" fill="#111827"/>
+  <text x="55"  y="359" font-family="monospace" font-size="13" fill="#e2e8f0" text-anchor="middle" font-weight="bold">'1'</text>
+  <text x="170" y="359" font-family="monospace" font-size="12" fill="#cbd5e1" text-anchor="middle">accumulate digit</text>
+  <text x="370" y="359" font-family="monospace" font-size="12" fill="#4ade80" text-anchor="middle">[ 3,+1,2,-1 ]</text>
+  <text x="570" y="359" font-family="monospace" font-size="12" fill="#94a3b8" text-anchor="middle">0</text>
+  <text x="670" y="359" font-family="monospace" font-size="12" fill="#94a3b8" text-anchor="middle">+1</text>
+  <text x="780" y="359" font-family="monospace" font-size="13" fill="#fbbf24" text-anchor="middle">1</text>
+
+  <!-- Row 7: '+' inner -->
+  <rect x="10" y="376" width="840" height="38" rx="3" fill="#0f172a"/>
+  <text x="55"  y="399" font-family="monospace" font-size="13" fill="#e2e8f0" text-anchor="middle" font-weight="bold">'+'</text>
+  <text x="170" y="399" font-family="monospace" font-size="12" fill="#cbd5e1" text-anchor="middle">result+=+1*1; sign=+1</text>
+  <text x="370" y="399" font-family="monospace" font-size="12" fill="#4ade80" text-anchor="middle">[ 3,+1,2,-1 ]</text>
+  <text x="570" y="399" font-family="monospace" font-size="13" fill="#fbbf24" text-anchor="middle">1</text>
+  <text x="670" y="399" font-family="monospace" font-size="12" fill="#4ade80" text-anchor="middle">+1</text>
+  <text x="780" y="399" font-family="monospace" font-size="12" fill="#94a3b8" text-anchor="middle">0</text>
+
+  <!-- Row 8: second '1' -->
+  <rect x="10" y="416" width="840" height="38" rx="3" fill="#111827"/>
+  <text x="55"  y="439" font-family="monospace" font-size="13" fill="#e2e8f0" text-anchor="middle" font-weight="bold">'1'</text>
+  <text x="170" y="439" font-family="monospace" font-size="12" fill="#cbd5e1" text-anchor="middle">accumulate digit</text>
+  <text x="370" y="439" font-family="monospace" font-size="12" fill="#4ade80" text-anchor="middle">[ 3,+1,2,-1 ]</text>
+  <text x="570" y="439" font-family="monospace" font-size="13" fill="#fbbf24" text-anchor="middle">1</text>
+  <text x="670" y="439" font-family="monospace" font-size="12" fill="#94a3b8" text-anchor="middle">+1</text>
+  <text x="780" y="439" font-family="monospace" font-size="13" fill="#fbbf24" text-anchor="middle">1</text>
+
+  <!-- Row 9: ')' close inner - red highlight -->
+  <rect x="10" y="456" width="840" height="44" rx="3" fill="#2a1515"/>
+  <text x="55"  y="473" font-family="monospace" font-size="13" fill="#f87171" text-anchor="middle" font-weight="bold">')'</text>
+  <text x="170" y="473" font-family="monospace" font-size="11" fill="#cbd5e1" text-anchor="middle">r+=+1*1=2; *pop(-1)=-2</text>
+  <text x="170" y="489" font-family="monospace" font-size="11" fill="#cbd5e1" text-anchor="middle">+=pop(2) → result=0</text>
+  <text x="370" y="481" font-family="monospace" font-size="12" fill="#4ade80" text-anchor="middle">[ 3, +1 ]</text>
+  <text x="570" y="481" font-family="monospace" font-size="13" fill="#fbbf24" text-anchor="middle">0</text>
+  <text x="670" y="481" font-family="monospace" font-size="12" fill="#94a3b8" text-anchor="middle">+1</text>
+  <text x="780" y="481" font-family="monospace" font-size="12" fill="#94a3b8" text-anchor="middle">0</text>
+
+  <!-- Row 10: ')' close outer -->
+  <rect x="10" y="502" width="840" height="44" rx="3" fill="#2a1515"/>
+  <text x="55"  y="519" font-family="monospace" font-size="13" fill="#f87171" text-anchor="middle" font-weight="bold">')'</text>
+  <text x="170" y="519" font-family="monospace" font-size="11" fill="#cbd5e1" text-anchor="middle">r+=+1*0=0; *pop(+1)=0</text>
+  <text x="170" y="535" font-family="monospace" font-size="11" fill="#cbd5e1" text-anchor="middle">+=pop(3) → result=3</text>
+  <text x="370" y="527" font-family="monospace" font-size="12" fill="#94a3b8" text-anchor="middle">[ ]</text>
+  <text x="570" y="527" font-family="monospace" font-size="13" fill="#4ade80" text-anchor="middle">3</text>
+  <text x="670" y="527" font-family="monospace" font-size="12" fill="#94a3b8" text-anchor="middle">+1</text>
+  <text x="780" y="527" font-family="monospace" font-size="12" fill="#94a3b8" text-anchor="middle">0</text>
+
+  <!-- Final result -->
+  <rect x="10" y="549" width="840" height="24" rx="3" fill="#1c3a2e" stroke="#22c55e" stroke-width="1"/>
+  <text x="430" y="565" font-family="monospace" font-size="13" fill="#4ade80" text-anchor="middle" font-weight="bold">Loop ends → return result + sign*num = 3 + 0 = 3  ✓</text>
+</svg>
