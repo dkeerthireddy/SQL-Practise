@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 440" width="820" height="440" font-family="Menlo, 'Courier New', monospace" font-size="13">
+  <!-- Background -->
+  <rect width="820" height="440" fill="#0f172a" rx="14"/>
+
+  <!-- Title -->
+  <text x="410" y="38" text-anchor="middle" fill="#f1f5f9" font-size="17" font-weight="bold">Monotonic Stack — Core Invariant</text>
+  <text x="410" y="58" text-anchor="middle" fill="#94a3b8" font-size="12">Two flavors. One rule: a pop is a resolve, not a remove.</text>
+
+  <!-- Divider -->
+  <line x1="410" y1="72" x2="410" y2="410" stroke="#334155" stroke-width="1" stroke-dasharray="5,4"/>
+
+  <!-- ============ LEFT PANEL: DECREASING ============ -->
+  <text x="205" y="90" text-anchor="middle" fill="#38bdf8" font-size="14" font-weight="bold">Monotonic Decreasing</text>
+  <text x="205" y="108" text-anchor="middle" fill="#7dd3fc" font-size="11">Daily Temperatures · Next Greater Element</text>
+
+  <!-- Stack boxes (decreasing: 9 > 7 > 5 bottom→top, left→right) -->
+  <!-- bottom=left label -->
+  <text x="30" y="165" fill="#64748b" font-size="10">bottom</text>
+  <text x="330" y="165" fill="#64748b" font-size="10">top</text>
+
+  <!-- Stack cells left panel -->
+  <rect x="50" y="170" width="50" height="42" fill="#1e3a5f" stroke="#3b82f6" stroke-width="1.5" rx="4"/>
+  <text x="75" y="196" text-anchor="middle" fill="#93c5fd" font-size="15" font-weight="bold">9</text>
+
+  <rect x="115" y="170" width="50" height="42" fill="#1e3a5f" stroke="#3b82f6" stroke-width="1.5" rx="4"/>
+  <text x="140" y="196" text-anchor="middle" fill="#93c5fd" font-size="15" font-weight="bold">7</text>
+
+  <rect x="180" y="170" width="50" height="42" fill="#1e3a5f" stroke="#3b82f6" stroke-width="1.5" rx="4"/>
+  <text x="205" y="196" text-anchor="middle" fill="#93c5fd" font-size="15" font-weight="bold">5</text>
+
+  <!-- invariant label -->
+  <text x="75" y="230" fill="#475569" font-size="11" text-anchor="middle">9</text>
+  <text x="140" y="230" fill="#475569" font-size="11" text-anchor="middle">7</text>
+  <text x="205" y="230" fill="#475569" font-size="11" text-anchor="middle">5</text>
+  <text x="122" y="248" text-anchor="middle" fill="#64748b" font-size="10">decreasing ↓ from bottom</text>
+
+  <!-- Incoming element 8 -->
+  <text x="275" y="186" fill="#fbbf24" font-size="12">incoming:</text>
+  <rect x="275" y="192" width="42" height="42" fill="#422006" stroke="#f59e0b" stroke-width="2" rx="4"/>
+  <text x="296" y="218" text-anchor="middle" fill="#fcd34d" font-size="16" font-weight="bold">8</text>
+
+  <!-- Pop arrows -->
+  <text x="122" y="278" text-anchor="middle" fill="#f87171" font-size="11" font-weight="bold">8 &gt; 5 → POP 5 (resolved!)</text>
+  <text x="122" y="294" text-anchor="middle" fill="#f87171" font-size="11" font-weight="bold">8 &gt; 7 → POP 7 (resolved!)</text>
+  <text x="122" y="310" text-anchor="middle" fill="#4ade80" font-size="11">8 &lt; 9 → PUSH 8 (waits)</text>
+
+  <!-- After state left -->
+  <text x="45" y="340" fill="#64748b" font-size="11">after:</text>
+  <rect x="80" y="326" width="42" height="36" fill="#1e3a5f" stroke="#3b82f6" stroke-width="1.5" rx="4"/>
+  <text x="101" y="349" text-anchor="middle" fill="#93c5fd" font-size="14" font-weight="bold">9</text>
+  <rect x="135" y="326" width="42" height="36" fill="#1e3a5f" stroke="#f59e0b" stroke-width="2" rx="4"/>
+  <text x="156" y="349" text-anchor="middle" fill="#fcd34d" font-size="14" font-weight="bold">8</text>
+
+  <!-- resolve annotation -->
+  <text x="205" y="345" fill="#4ade80" font-size="11">✓ 8 is "next greater"</text>
+  <text x="205" y="360" fill="#4ade80" font-size="11">  for both 5 and 7</text>
+
+  <!-- ============ RIGHT PANEL: INCREASING ============ -->
+  <text x="615" y="90" text-anchor="middle" fill="#34d399" font-size="14" font-weight="bold">Monotonic Increasing</text>
+  <text x="615" y="108" text-anchor="middle" fill="#6ee7b7" font-size="11">Largest Rectangle · Trapping Rain Water</text>
+
+  <!-- Stack cells right panel: 1, 3, 6 -->
+  <text x="440" y="165" fill="#64748b" font-size="10">bottom</text>
+  <text x="740" y="165" fill="#64748b" font-size="10">top</text>
+
+  <rect x="460" y="170" width="50" height="42" fill="#1a3326" stroke="#10b981" stroke-width="1.5" rx="4"/>
+  <text x="485" y="196" text-anchor="middle" fill="#6ee7b7" font-size="15" font-weight="bold">1</text>
+
+  <rect x="525" y="170" width="50" height="42" fill="#1a3326" stroke="#10b981" stroke-width="1.5" rx="4"/>
+  <text x="550" y="196" text-anchor="middle" fill="#6ee7b7" font-size="15" font-weight="bold">3</text>
+
+  <rect x="590" y="170" width="50" height="42" fill="#1a3326" stroke="#10b981" stroke-width="1.5" rx="4"/>
+  <text x="615" y="196" text-anchor="middle" fill="#6ee7b7" font-size="15" font-weight="bold">6</text>
+
+  <text x="532" y="248" text-anchor="middle" fill="#64748b" font-size="10">increasing ↑ from bottom</text>
+
+  <!-- Incoming element 2 -->
+  <text x="685" y="186" fill="#fbbf24" font-size="12">incoming:</text>
+  <rect x="685" y="192" width="42" height="42" fill="#422006" stroke="#f59e0b" stroke-width="2" rx="4"/>
+  <text x="706" y="218" text-anchor="middle" fill="#fcd34d" font-size="16" font-weight="bold">2</text>
+
+  <!-- Pop arrows right -->
+  <text x="575" y="278" text-anchor="middle" fill="#f87171" font-size="11" font-weight="bold">2 &lt; 6 → POP 6 (right boundary = 2)</text>
+  <text x="575" y="294" text-anchor="middle" fill="#f87171" font-size="11" font-weight="bold">2 &lt; 3 → POP 3 (right boundary = 2)</text>
+  <text x="575" y="310" text-anchor="middle" fill="#4ade80" font-size="11">2 &gt; 1 → PUSH 2 (waits)</text>
+
+  <!-- After state right -->
+  <text x="455" y="340" fill="#64748b" font-size="11">after:</text>
+  <rect x="490" y="326" width="42" height="36" fill="#1a3326" stroke="#10b981" stroke-width="1.5" rx="4"/>
+  <text x="511" y="349" text-anchor="middle" fill="#6ee7b7" font-size="14" font-weight="bold">1</text>
+  <rect x="545" y="326" width="42" height="36" fill="#1a3326" stroke="#f59e0b" stroke-width="2" rx="4"/>
+  <text x="566" y="349" text-anchor="middle" fill="#fcd34d" font-size="14" font-weight="bold">2</text>
+
+  <text x="615" y="345" fill="#4ade80" font-size="11">✓ 2 is right boundary</text>
+  <text x="615" y="360" fill="#4ade80" font-size="11">  for both 6 and 3</text>
+
+  <!-- Bottom key principle box -->
+  <rect x="60" y="388" width="700" height="36" fill="#1e293b" rx="6" stroke="#334155" stroke-width="1"/>
+  <text x="410" y="408" text-anchor="middle" fill="#e2e8f0" font-size="12" font-weight="bold">Key: Each element pushed once, popped once → 2n total ops → O(n) amortized, NOT O(n²)</text>
+  <text x="410" y="422" text-anchor="middle" fill="#64748b" font-size="11">The while-loop's total iteration count across the entire scan is bounded by n</text>
+</svg>
