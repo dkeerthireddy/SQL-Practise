@@ -81,7 +81,7 @@
   <path d="M286,201 L257,201" stroke="#2C2C2A" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>
   <rect x="288" y="180" width="72" height="30" rx="8" fill="#3B8BD4" stroke="#2C2C2A" stroke-width="1"/>
   <text x="324" y="200" text-anchor="middle" font-size="11" font-weight="600" fill="#FFFFFF">facebook</text>
-  <path d="M324" d="M324,176 L324,180" stroke="#3B8BD4" stroke-width="2" fill="none" marker-end="url(#arr-blue)"/>
+  <path d="M324,176 L324,180" stroke="#3B8BD4" stroke-width="2" fill="none" marker-end="url(#arr-blue)"/>
   <text x="324" y="174" text-anchor="middle" font-size="9" fill="#3B8BD4">cursor</text>
   <text x="380" y="193" font-size="10" fill="#888780">facebook.next=None</text>
 
@@ -172,7 +172,7 @@
 
   <rect x="60" y="512" width="72" height="30" rx="8" fill="#3B8BD4" stroke="#2C2C2A" stroke-width="1"/>
   <text x="96" y="532" text-anchor="middle" font-size="11" font-weight="600" fill="#FFFFFF">leetcode</text>
-  <path x="96" d="M96,508 L96,512" stroke="#3B8BD4" stroke-width="2" fill="none" marker-end="url(#arr-blue)"/>
+  <path d="M96,508 L96,512" stroke="#3B8BD4" stroke-width="2" fill="none" marker-end="url(#arr-blue)"/>
   <text x="96" y="506" text-anchor="middle" font-size="9" fill="#3B8BD4">cursor</text>
   <path d="M133,525 L162,525" stroke="#2C2C2A" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>
   <path d="M162,533 L133,533" stroke="#2C2C2A" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>

@@ -170,7 +170,7 @@
   <path d="M210,406 Q276,384 338,406" stroke="#3B6D11" stroke-width="2" fill="none" marker-end="url(#arr-green)"/>
   <text x="276" y="382" text-anchor="middle" font-size="9" fill="#3B6D11">node(1).next = node(3)</text>
   <!-- backward arrow 3 → 1 -->
-  <path d="M342" d="M340,430 Q276,450 212,430" stroke="#3B6D11" stroke-width="2" fill="none" marker-end="url(#arr-green)"/>
+  <path d="M340,430 Q276,450 212,430" stroke="#3B6D11" stroke-width="2" fill="none" marker-end="url(#arr-green)"/>
   <rect x="342" y="396" width="56" height="34" rx="8" fill="#FFFFFF" stroke="#2C2C2A" stroke-width="1"/>
   <text x="370" y="418" text-anchor="middle" font-size="13" fill="#2C2C2A">3</text>
   <path d="M399,412 L434,412" stroke="#2C2C2A" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>
