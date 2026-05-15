@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="840" height="500" viewBox="0 0 840 500">
+  <rect width="840" height="500" fill="#0f172a"/>
+
+  <!-- Title -->
+  <text x="420" y="34" font-family="monospace" font-size="17" fill="#e2e8f0" text-anchor="middle" font-weight="bold">844. Backspace String Compare — Dry Run</text>
+  <text x="420" y="54" font-family="monospace" font-size="13" fill="#64748b" text-anchor="middle">s = "ab#c"  |  t = "ad#c"  →  both become ["a","c"]  →  True</text>
+
+  <!-- Column headers -->
+  <text x="80"  y="82" font-family="monospace" font-size="13" fill="#94a3b8" text-anchor="middle">Char</text>
+  <text x="200" y="82" font-family="monospace" font-size="13" fill="#94a3b8" text-anchor="middle">String</text>
+  <text x="340" y="82" font-family="monospace" font-size="13" fill="#94a3b8" text-anchor="middle">Stack State</text>
+  <text x="540" y="82" font-family="monospace" font-size="13" fill="#94a3b8" text-anchor="middle">Action</text>
+  <text x="720" y="82" font-family="monospace" font-size="13" fill="#94a3b8" text-anchor="middle">Signal?</text>
+  <line x1="20" y1="88" x2="820" y2="88" stroke="#1e293b" stroke-width="1"/>
+
+  <!-- Row data: s = "ab#c" -->
+  <!-- Row 1: s, 'a' -->
+  <rect x="20" y="93" width="800" height="38" rx="4" fill="#0f2338"/>
+  <text x="80"  y="117" font-family="monospace" font-size="14" fill="#f472b6" text-anchor="middle" font-weight="bold">'a'</text>
+  <text x="200" y="117" font-family="monospace" font-size="13" fill="#94a3b8" text-anchor="middle">s</text>
+  <rect x="290" y="99" width="100" height="26" rx="4" fill="#1e3a5f" stroke="#3b82f6" stroke-width="1"/>
+  <text x="340" y="117" font-family="monospace" font-size="13" fill="#93c5fd" text-anchor="middle">[ a ]</text>
+  <text x="540" y="117" font-family="monospace" font-size="13" fill="#86efac" text-anchor="middle">push 'a'</text>
+  <text x="720" y="117" font-family="monospace" font-size="12" fill="#475569" text-anchor="middle">regular</text>
+
+  <!-- Row 2: s, 'b' -->
+  <rect x="20" y="135" width="800" height="38" rx="4" fill="#0f172a"/>
+  <text x="80"  y="159" font-family="monospace" font-size="14" fill="#f472b6" text-anchor="middle" font-weight="bold">'b'</text>
+  <text x="200" y="159" font-family="monospace" font-size="13" fill="#94a3b8" text-anchor="middle">s</text>
+  <rect x="290" y="141" width="120" height="26" rx="4" fill="#1e3a5f" stroke="#3b82f6" stroke-width="1"/>
+  <text x="350" y="159" font-family="monospace" font-size="13" fill="#93c5fd" text-anchor="middle">[ a, b ]</text>
+  <text x="540" y="159" font-family="monospace" font-size="13" fill="#86efac" text-anchor="middle">push 'b'</text>
+  <text x="720" y="159" font-family="monospace" font-size="12" fill="#475569" text-anchor="middle">regular</text>
+
+  <!-- Row 3: s, '#' — undo signal -->
+  <rect x="20" y="177" width="800" height="38" rx="4" fill="#2d1010"/>
+  <text x="80"  y="201" font-family="monospace" font-size="14" fill="#ef4444" text-anchor="middle" font-weight="bold">'#'</text>
+  <text x="200" y="201" font-family="monospace" font-size="13" fill="#94a3b8" text-anchor="middle">s</text>
+  <rect x="290" y="183" width="100" height="26" rx="4" fill="#1e3a5f" stroke="#3b82f6" stroke-width="1"/>
+  <text x="340" y="201" font-family="monospace" font-size="13" fill="#93c5fd" text-anchor="middle">[ a ]</text>
+  <text x="540" y="201" font-family="monospace" font-size="13" fill="#fca5a5" text-anchor="middle">pop 'b'</text>
+  <rect x="650" y="183" width="140" height="26" rx="4" fill="#450a0a" stroke="#ef4444" stroke-width="1"/>
+  <text x="720" y="201" font-family="monospace" font-size="12" fill="#fca5a5" text-anchor="middle">⚡ UNDO</text>
+
+  <!-- Row 4: s, 'c' -->
+  <rect x="20" y="219" width="800" height="38" rx="4" fill="#0f172a"/>
+  <text x="80"  y="243" font-family="monospace" font-size="14" fill="#f472b6" text-anchor="middle" font-weight="bold">'c'</text>
+  <text x="200" y="243" font-family="monospace" font-size="13" fill="#94a3b8" text-anchor="middle">s</text>
+  <rect x="290" y="225" width="120" height="26" rx="4" fill="#1e3a5f" stroke="#3b82f6" stroke-width="1"/>
+  <text x="350" y="243" font-family="monospace" font-size="13" fill="#93c5fd" text-anchor="middle">[ a, c ]</text>
+  <text x="540" y="243" font-family="monospace" font-size="13" fill="#86efac" text-anchor="middle">push 'c'</text>
+  <text x="720" y="243" font-family="monospace" font-size="12" fill="#475569" text-anchor="middle">regular</text>
+
+  <!-- divider -->
+  <line x1="20" y1="262" x2="820" y2="262" stroke="#1e293b" stroke-width="1" stroke-dasharray="6,4"/>
+  <text x="420" y="278" font-family="monospace" font-size="12" fill="#475569" text-anchor="middle">── now processing t = "ad#c" ──</text>
+
+  <!-- Row 5: t, 'a' -->
+  <rect x="20" y="283" width="800" height="38" rx="4" fill="#0f2338"/>
+  <text x="80"  y="307" font-family="monospace" font-size="14" fill="#a78bfa" text-anchor="middle" font-weight="bold">'a'</text>
+  <text x="200" y="307" font-family="monospace" font-size="13" fill="#94a3b8" text-anchor="middle">t</text>
+  <rect x="290" y="289" width="100" height="26" rx="4" fill="#2d1654" stroke="#8b5cf6" stroke-width="1"/>
+  <text x="340" y="307" font-family="monospace" font-size="13" fill="#c4b5fd" text-anchor="middle">[ a ]</text>
+  <text x="540" y="307" font-family="monospace" font-size="13" fill="#86efac" text-anchor="middle">push 'a'</text>
+  <text x="720" y="307" font-family="monospace" font-size="12" fill="#475569" text-anchor="middle">regular</text>
+
+  <!-- Row 6: t, 'd' -->
+  <rect x="20" y="325" width="800" height="38" rx="4" fill="#0f172a"/>
+  <text x="80"  y="349" font-family="monospace" font-size="14" fill="#a78bfa" text-anchor="middle" font-weight="bold">'d'</text>
+  <text x="200" y="349" font-family="monospace" font-size="13" fill="#94a3b8" text-anchor="middle">t</text>
+  <rect x="290" y="331" width="120" height="26" rx="4" fill="#2d1654" stroke="#8b5cf6" stroke-width="1"/>
+  <text x="350" y="349" font-family="monospace" font-size="13" fill="#c4b5fd" text-anchor="middle">[ a, d ]</text>
+  <text x="540" y="349" font-family="monospace" font-size="13" fill="#86efac" text-anchor="middle">push 'd'</text>
+  <text x="720" y="349" font-family="monospace" font-size="12" fill="#475569" text-anchor="middle">regular</text>
+
+  <!-- Row 7: t, '#' — undo signal -->
+  <rect x="20" y="367" width="800" height="38" rx="4" fill="#2d1010"/>
+  <text x="80"  y="391" font-family="monospace" font-size="14" fill="#ef4444" text-anchor="middle" font-weight="bold">'#'</text>
+  <text x="200" y="391" font-family="monospace" font-size="13" fill="#94a3b8" text-anchor="middle">t</text>
+  <rect x="290" y="373" width="100" height="26" rx="4" fill="#2d1654" stroke="#8b5cf6" stroke-width="1"/>
+  <text x="340" y="391" font-family="monospace" font-size="13" fill="#c4b5fd" text-anchor="middle">[ a ]</text>
+  <text x="540" y="391" font-family="monospace" font-size="13" fill="#fca5a5" text-anchor="middle">pop 'd'</text>
+  <rect x="650" y="373" width="140" height="26" rx="4" fill="#450a0a" stroke="#ef4444" stroke-width="1"/>
+  <text x="720" y="391" font-family="monospace" font-size="12" fill="#fca5a5" text-anchor="middle">⚡ UNDO</text>
+
+  <!-- Row 8: t, 'c' -->
+  <rect x="20" y="409" width="800" height="38" rx="4" fill="#0f2338"/>
+  <text x="80"  y="433" font-family="monospace" font-size="14" fill="#a78bfa" text-anchor="middle" font-weight="bold">'c'</text>
+  <text x="200" y="433" font-family="monospace" font-size="13" fill="#94a3b8" text-anchor="middle">t</text>
+  <rect x="290" y="415" width="120" height="26" rx="4" fill="#2d1654" stroke="#8b5cf6" stroke-width="1"/>
+  <text x="350" y="433" font-family="monospace" font-size="13" fill="#c4b5fd" text-anchor="middle">[ a, c ]</text>
+  <text x="540" y="433" font-family="monospace" font-size="13" fill="#86efac" text-anchor="middle">push 'c'</text>
+  <text x="720" y="433" font-family="monospace" font-size="12" fill="#475569" text-anchor="middle">regular</text>
+
+  <!-- Final result -->
+  <rect x="20" y="452" width="800" height="38" rx="6" fill="#0d3320" stroke="#22c55e" stroke-width="2"/>
+  <text x="420" y="472" font-family="monospace" font-size="14" fill="#86efac" text-anchor="middle">s_stack = [ a, c ]  ==  t_stack = [ a, c ]</text>
+  <text x="420" y="488" font-family="monospace" font-size="13" fill="#4ade80" text-anchor="middle">✓  return True</text>
+</svg>
