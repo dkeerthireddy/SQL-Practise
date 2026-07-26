@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="840" height="480" viewBox="0 0 840 480" font-family="Consolas, Menlo, monospace">
+  <rect width="840" height="480" fill="#0f172a"/>
+  <text x="420" y="36" text-anchor="middle" fill="#e2e8f0" font-size="20" font-weight="bold">Stack-Based Design — Two Patterns</text>
+
+  <!-- Min Stack panel -->
+  <rect x="30" y="60" width="370" height="380" rx="8" fill="#1e293b" stroke="#334155"/>
+  <text x="215" y="90" text-anchor="middle" fill="#38bdf8" font-size="16" font-weight="bold">Min Stack</text>
+  <text x="215" y="112" text-anchor="middle" fill="#94a3b8" font-size="12">auxiliary stack mirrors main stack</text>
+
+  <text x="50" y="150" fill="#e2e8f0" font-size="13">main:  [ 5 ][ 3 ][ 7 ]</text>
+  <text x="50" y="175" fill="#facc15" font-size="13">min :  [ 5 ][ 3 ][ 3 ]</text>
+  <text x="50" y="200" fill="#64748b" font-size="11">              ^top = current min</text>
+
+  <rect x="50" y="220" width="320" height="1" fill="#334155"/>
+
+  <text x="50" y="248" fill="#e2e8f0" font-size="12">push(x):</text>
+  <text x="66" y="268" fill="#94a3b8" font-size="12">stack.append(x)</text>
+  <text x="66" y="288" fill="#94a3b8" font-size="12">min_stack.append(min(x, top))</text>
+
+  <text x="50" y="316" fill="#e2e8f0" font-size="12">pop():</text>
+  <text x="66" y="336" fill="#94a3b8" font-size="12">stack.pop()</text>
+  <text x="66" y="356" fill="#94a3b8" font-size="12">min_stack.pop()   ← paired, always</text>
+
+  <text x="50" y="392" fill="#e2e8f0" font-size="12">getMin():</text>
+  <text x="66" y="412" fill="#4ade80" font-size="12">return min_stack[-1]   → O(1)</text>
+
+  <text x="215" y="450" text-anchor="middle" fill="#64748b" font-size="11">Time: O(1) all ops · Space: O(n) extra</text>
+
+  <!-- Two-stack queue panel -->
+  <rect x="440" y="60" width="370" height="380" rx="8" fill="#1e293b" stroke="#334155"/>
+  <text x="625" y="90" text-anchor="middle" fill="#38bdf8" font-size="16" font-weight="bold">Queue via Two Stacks</text>
+  <text x="625" y="112" text-anchor="middle" fill="#94a3b8" font-size="12">reverse the reversal</text>
+
+  <text x="460" y="148" fill="#e2e8f0" font-size="13">stack_in :  [ 1 ][ 2 ][ 3 ]</text>
+  <text x="460" y="173" fill="#facc15" font-size="13">stack_out:  [           ]</text>
+
+  <rect x="460" y="190" width="330" height="1" fill="#334155"/>
+
+  <text x="460" y="216" fill="#e2e8f0" font-size="12">push(x):</text>
+  <text x="476" y="236" fill="#94a3b8" font-size="12">stack_in.append(x)   ← always</text>
+
+  <text x="460" y="264" fill="#e2e8f0" font-size="12">pop() / peek():</text>
+  <text x="476" y="284" fill="#94a3b8" font-size="12">if stack_out empty:</text>
+  <text x="492" y="304" fill="#f472b6" font-size="12">drain stack_in → stack_out</text>
+  <text x="476" y="324" fill="#94a3b8" font-size="12">(reverses order back to FIFO)</text>
+  <text x="476" y="346" fill="#4ade80" font-size="12">return stack_out.pop()</text>
+
+  <text x="460" y="378" fill="#e2e8f0" font-size="12">after drain:</text>
+  <text x="476" y="398" fill="#facc15" font-size="13">stack_out: [ 3 ][ 2 ][ 1 ]</text>
+  <text x="476" y="416" fill="#64748b" font-size="11">                        ^pop → 1 (oldest, FIFO)</text>
+
+  <text x="625" y="450" text-anchor="middle" fill="#64748b" font-size="11">push: O(1) · pop/peek: O(1) amortized</text>
+</svg>
